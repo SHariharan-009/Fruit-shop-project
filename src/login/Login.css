@@ -1,0 +1,66 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.login{
+     width: 450px;
+     height: 350px;
+     background-color: lightblue;
+     align-items: center;
+     margin-left:40%;
+     margin-top: 40px;
+     position: relative;
+     border-radius: 10px;
+     gap: 5px
+    }
+ .heading{
+    font-weight: 500;
+    font-size: 30px;
+    color: blue;
+    padding: 20px;
+    position: absolute;
+    align-items: center;
+ }  
+ .cont label{
+    position: absolute;
+    margin-top: 60px;
+    margin-left: 0px;
+    color: black;
+    width: 100px;
+    height: 10px;
+    padding: 10px;
+ }
+ .cont input{
+    position: relative;
+    margin-top: 60px;
+    margin-left: 120px;
+    width: 250px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 30px;
+    background-color: gainsboro;
+ }
+ .cont input:hover{
+    box-shadow: red;
+ }
+ .login button{
+    /* position: absolute; */
+    color: white;
+    align-items: center;
+    margin-top: 35px;
+    margin-left: 100px;
+    width: 80px;
+    height: 30px;
+    background-color: blue;
+    border-radius: 10px;
+ }
+ .login button:hover{
+    background-color: white;
+    color: black;
+    font-weight: 100%;
+ }
+ .err{
+    font-size: 12px;
+    color: red;
+ }
