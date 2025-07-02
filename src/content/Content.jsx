@@ -5,8 +5,7 @@ const Content = () => {
   return (
     <div className='cont'>
         Shop content
-         <input type="checkbox" id="clk"></input>
-         <label for="clk" className="lab"></label>
+         
     </div>
   )
 }
