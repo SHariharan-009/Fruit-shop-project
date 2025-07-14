@@ -1,0 +1,55 @@
+.cd2img1,
+.cd2img2,
+.cd2img3,
+.cd2img4,
+.cd2aimg1,
+.cd2aimg2,
+.cd2aimg3,
+.cd2aimg4 {
+    width: 320px;
+    height: 250px;
+    background-color: white;
+    color: blue;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px;
+    padding: 10px;
+    margin-bottom: 300px;
+    position: absolute;
+}
+
+.cd2aimg1,
+.cd2aimg2,
+.cd2aimg3,
+.cd2aimg4 {
+    margin-top: 250px;
+
+}
+
+.cd2img2,
+.cd2aimg2 {
+    margin-left: 340px;
+}
+
+.cd2img3,
+.cd2aimg3 {
+    margin-left: 680px;
+}
+
+.cd2img4,
+.cd2aimg4 {
+    margin-left: 1020px;
+}
+
+.cd2img1-button:hover
+
+/* .cd2img2 button,
+.cd2img3 button,
+.cd2img4 button,
+.cd2aimg1 button,
+.cd2aimg2 button,
+.cd2aimg3 button,
+.cd2aimg4 button{ */
+    {
+    background-color: blue;
+    color: white
+}

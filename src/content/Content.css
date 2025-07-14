@@ -1,3 +1,91 @@
-.cont{
-color: aqua;
+.img1,
+.img2,
+.img3 {
+    position: absolute;
+    border-radius: 20px;
+    box-sizing: border-box;
+    transition: box-shadow 0.3s ease;
+}
+
+/* Individual Boxes */
+.img1 {
+    background-color: aquamarine;
+    height: 100%;
+    margin-left: 0px;
+    width: 50%;
+    margin-right: 690px;
+}
+
+.img2 {
+    background-color: lightpink;
+    height: 50%;
+    margin-top: 0px;
+    margin-left: 680px;
+    margin-right: 0px;
+    margin-bottom: 270px;
+    width: 50%;
+}
+
+.img3 {
+    background-color: lightgray;
+    height: 50%;
+    margin-top: 270px;
+    margin-left: 680px;
+    margin-right: 0px;
+    width: 50%;
+}
+
+/* Text Styling Inside .img1 */
+.img1 label,
+.img1 h2,
+.img2 label,
+.img2 h2,
+.img3 label,
+.img3 h2 {
+    color: blue;
+    margin-bottom: 10px;
+}
+
+.img1 label {
+    font-size: 20px;
+    display: block;
+}
+
+.img1 h2 {
+    font-size: 32px;
+}
+
+/* Button Styling */
+.img1 button,
+.img2 button,
+.img3 button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+.img1 img {
+    width: 70%;
+    height: 70%;
+}
+
+.img2 img,
+.img3 img {
+    width: 30%;
+    height: 60%;
+}
+
+.img1 button:hover,
+.img2 button:hover,
+.img3 button:hover {
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover Box Shadow */
+.img1:hover,
+.img2:hover,
+.img3:hover {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
 }
