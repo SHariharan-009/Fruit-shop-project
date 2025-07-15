@@ -50,15 +50,17 @@ const Login = () => {
 
         <div
             style={{
-                boxShadow: "0px 10px 20px",
                 width: "100%",
-                height: "100vh",
+                height: "550px",
                 backgroundImage: `url(${bg1})`,
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
-                backgroundAttachment: "fixed"
+                backgroundAttachment: "fixed",
+                marginTop: "0px",
+                display: "flex",
+                alignItem: "center"
             }}>
-            <div className='login'>
+            <div className='login' style={{}}>
 
                 <label className='heading'>User login</label><br />
                 <div className="cont">
@@ -72,7 +74,7 @@ const Login = () => {
                 </div>
                 <button type='submit' onClick={submitfunc}>Submit</button>
                 <button type='cancel'>cancel</button>
-                <p style={{ marginLeft: "15%", padding: "10px" }}>Don't have account create new account <Link to="/Signup">Signup</Link></p>
+                <p style={{ marginLeft: "15%", padding: "10px", color: "white" }}>Don't have account create new account <Link to="/Signup" style={{ color: "yellow", textDecoration: "none" }}>Signup</Link></p>
             </div>
         </div >
     )

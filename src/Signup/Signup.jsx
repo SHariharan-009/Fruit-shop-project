@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { signup } from "../api/api"
+import bg1 from "../assets/img/bg1.jpeg"
 import "./Signup.css"
 
 const Signup = () => {
@@ -49,20 +50,33 @@ const Signup = () => {
     }
   }
   return (
-    <div className='container' style={{ boxShadow: "0px 10px 20px" }}>
-      <form onSubmit={checkfunc} >
-        <label style={{ fontSize: "30px", color: "blue", alignItems: "center" }}>Signup</label><br />
-        <label>Name :</label><input type="text" placeholder="Name" value={name} onChange={(e) => setname(e.target.value)} required /><br />
-        {errorname ? (<><p style={{ color: "red" }}>Name required</p></>) : (<></>)}
-        <label>mail :</label><input type="Email" value={mail} onChange={(e) => setmail(e.target.value)} required /><br />
-        {errormail ? (<><p style={{ color: "red" }}>mail required</p></>) : (<></>)}
-        <label>Password :</label><input type="text" placeholder="password" value={password} onChange={(e) => setpassword(e.target.value)} required /><br />
-        {errorpassword ? (<><p style={{ color: "red" }}>password required</p></>) : (<></>)}
-        <label>Gender :</label><input type="text" value={gender} placeholder="Gender" onChange={(e) => setgender(e.target.value)} /><br />
-        <button>Submit</button>  <button>cancel</button>
-        <p> Already have an account? <Link to="/Login" style={{ textDecoration: "none" }}>Login</Link></p>
-      </form>
-    </div>
+    <div
+      style={{
+        width: "100%",
+        height: "550px",
+        backgroundImage: `url(${bg1})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundAttachment: "fixed",
+        marginTop: "0px",
+        display: "flex",
+        alignItem: "center"
+      }}>
+      <div className='container' style={{ boxShadow: "0px 10px 20px" }}>
+        <form onSubmit={checkfunc} >
+          <label style={{ fontSize: "30px", color: "blue", alignItems: "center" }}>Signup</label><br />
+          <label>Name :</label><input type="text" placeholder="Name" value={name} onChange={(e) => setname(e.target.value)} required /><br />
+          {errorname ? (<><p style={{ color: "red" }}>Name required</p></>) : (<></>)}
+          <label>mail :</label><input type="Email" value={mail} onChange={(e) => setmail(e.target.value)} required /><br />
+          {errormail ? (<><p style={{ color: "red" }}>mail required</p></>) : (<></>)}
+          <label>Password :</label><input type="text" placeholder="password" value={password} onChange={(e) => setpassword(e.target.value)} required /><br />
+          {errorpassword ? (<><p style={{ color: "red" }}>password required</p></>) : (<></>)}
+          <label>Gender :</label><input type="text" value={gender} placeholder="Gender" onChange={(e) => setgender(e.target.value)} /><br />
+          <span><button style={{ marginTop: "20px", padding: "5px" }}>Submit</button>  <button style={{ marginTop: "20px", padding: "5px" }}>cancel</button></span>
+          <p> Already have an account? <Link to="/Login" style={{ textDecoration: "none" }}>Login</Link></p>
+        </form>
+      </div>
+    </div >
   )
 }
 export default Signup
