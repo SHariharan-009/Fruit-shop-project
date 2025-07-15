@@ -4,45 +4,47 @@ import grp from "../assets/img/grap.png"
 import pin from "../assets/img/pin.png"
 
 
+
+
 export const img2 = [
     {
         id: 1,
         img: app,
-        label: "1 KG Rs 300",
+        label: "300",
         header: "Apple",
         buttonName: "Buy now",
         addcart: "Add to card",
-        kg: "KG",
+        // kg: kgvalue,
         cls: "cd2img1"
     },
     {
         id: 2,
         img: org,
-        label: "1 KG Rs 200",
+        label: "200",
         header: "Orange",
         buttonName: "Buy now",
         addcart: "Add to card",
-        kg: "KG",
+        // kg: kgvalue,
         cls: "cd2img2"
     },
     {
         id: 3,
         img: grp,
-        label: "1 KG Rs 250",
+        label: "250",
         header: "Graps",
         buttonName: "Buy now",
         addcart: "Add to card",
-        kg: "KG",
+        // kg: kgvalue,
         cls: "cd2img3"
     },
     {
         id: 1,
         img: pin,
-        label: "1 KG Rs 150",
+        label: "150",
         header: "pineapple",
         buttonName: "Buy now",
         addcart: "Add to card",
-        kg: "KG",
+        // kg: kgvalue,
         cls: "cd2img4"
     }
 ]

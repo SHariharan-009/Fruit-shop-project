@@ -12,6 +12,7 @@ import { Routes, Route } from "react-router-dom"
 import './App.css'
 import Signup from './Signup/Signup'
 import Dashboard from './dashboard/dashboard'
+import Home from './content/Home'
 
 function App() {
   return (
@@ -19,11 +20,11 @@ function App() {
       <Header />
 
       <Routes>
-        {/* <Route path="/" element={<Home />} /> */}
+        <Route path="/" element={<Content />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/Signup" element={<Signup />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/content" element={<Content />} />
+
         <Route path="/Juice" element={<Juice />} />
         <Route path="/Fruits" element={<Fruits />} />
         <Route path="/Snacks" element={<Snacks />} />

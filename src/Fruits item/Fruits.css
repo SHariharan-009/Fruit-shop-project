@@ -40,16 +40,7 @@
     margin-left: 1020px;
 }
 
-.cd2img1-button:hover
-
-/* .cd2img2 button,
-.cd2img3 button,
-.cd2img4 button,
-.cd2aimg1 button,
-.cd2aimg2 button,
-.cd2aimg3 button,
-.cd2aimg4 button{ */
-    {
+.butn:hover {
     background-color: blue;
-    color: white
+    color: white;
 }

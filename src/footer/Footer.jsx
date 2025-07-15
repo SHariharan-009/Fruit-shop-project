@@ -1,13 +1,20 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import "./Footer.css"
+import { myContext } from '../Context/Context'
+import { useState } from 'react'
 
 const Footer = () => {
-  return (
-    <div className='foot'>
+  // const { data } = useContext(myContext)
 
-
-    </div>
-  )
+  // const [footvalue, setfootvalue] = useState("")
+  // console.log(footvalue)
+  // return (
+  //   < div >
+  //     {/* <h1>{data.name}</h1> */}
+  //     <h1>{footvalue}</h1>
+  //     <input type="text" onChange={(e) => { setfootvalue(e.target.value) }} style={{ color: "red" }} />
+  //   </div >
+  // )
 }
 
-export default Footer
+export default Footer;

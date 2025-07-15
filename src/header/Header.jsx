@@ -1,17 +1,19 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import "./Header.css"
 import { Link } from "react-router-dom"
 import menuSVG from "../../src/assets/menu.svg"
 import Home from '../content/Home'
 import { FaSearch, FaRegUser, FaRegHeart } from "react-icons/fa";
 import { BsToggle2On, BsToggle2Off } from "react-icons/bs";
+import { myContext } from '../Context/Context'
 
 const Header = () => {
-  const [clkcutn, setclkcutn] = useState(true)
 
-  const clickfunc = () => {
-    setclkcutn(prev => !prev)
-  }
+  const { clkcutn, setclkcutn } = useContext(myContext)
+
+
+
+
 
   return (
     <div className='navbar' style={{ backgroundColor: clkcutn ? "white" : "black" }}>
@@ -26,10 +28,10 @@ const Header = () => {
         </select>
         <input type="text" className='searchbar' placeholder='  Search' required />
         <span style={{ padding: "0px" }}><FaSearch /></span>
-        <Link to="/content">Home</Link>
+        <Link to="/">Home</Link>
         <Link to="/Login"><span><FaRegUser /></span></Link>
         <Link to=""><FaRegHeart /></Link>
-        <Link to="" onClick={() => clickfunc()}> {clkcutn ? <BsToggle2On /> : <BsToggle2Off />}</Link>
+        <Link to="" onClick={() => setclkcutn(prev => !prev)}> {clkcutn ? <BsToggle2On /> : <BsToggle2Off />}</Link>
       </div>
     </div>
   )

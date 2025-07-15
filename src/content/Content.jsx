@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import "./Content.css"
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { json } from "../data/data"
+import { myContext } from '../Context/Context'
 
 const Content = () => {
-
+  const { clkcutn } = useContext(myContext)
 
   const navigate = useNavigate()
 
@@ -18,7 +19,7 @@ const Content = () => {
   }
 
   return (
-    <div className='container' style={{ backgroundColor: "white", margin: "0px", width: "100%", height: "540px", borderStyle: 'dasheds', position: "relative" }}>
+    <div className='container' style={{ backgroundColor: clkcutn ? "white" : "black", margin: "0px", width: "100%", height: "540px", position: "relative" }}>
       {
         json.map((data) => (
 
