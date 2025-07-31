@@ -27,17 +27,16 @@ const Fruits = () => {
               <img src={data.img} alt="image" style={{ width: "200px", height: "150px" }} />
               <label style={{ textShadow: "0px 5px 10px", fontSize: "15px", fontWeight: "20px" }} >1 KG Rs :{data.label}</label>
               <h2>{data.header}</h2>
-              {/* <Link to={`/content/${data.id}`}><img src={data.img} width="100px" alt="Fruit juice image" className='' /></Link><br /> */}
               <div style={{ marginTop: "10px" }}><span style={{ marginLeft: "10px" }}><button className="butn" style={{ backgroundColor: "white", color: "blue", borderRadius: "10px", padding: "5px" }}>{data.buttonName}</button></span>
                 <span style={{ marginLeft: "10px" }}><button className="butn" style={{ backgroundColor: "white", color: "blue", borderRadius: "10px", padding: "5px" }}>{data.addcart}</button></span>
-                <span style={{ marginLeft: "20px" }}>
-                  <input
+                {/* <input
                     type="number"
                     value={data.kg}
                     style={{ backgroundColor: "white", color: "blue", borderRadius: "5px", width: "50px", height: "40px", padding: "10px" }}
                     onChange={(e) => handleFruitKgChange(e, data.id)}
-                  />
-                </span> {data.kg} KG</div>
+                  /> */}
+                {/* {data.kg}  */}
+              </div>
             </div>
           ))
         }
@@ -46,12 +45,12 @@ const Fruits = () => {
         {
           img2a.map((data) => (
             <div key={data.id} className={data.cls}>
-              <label>{data.label}</label>
+              <img src={data.img} alt="image" style={{ width: "200px", height: "150px" }} />
+              <label style={{ textShadow: "0px 5px 10px", fontSize: "15px", fontWeight: "20px" }} >1 KG Rs :{data.label}</label>
               <h2>{data.header}</h2>
-              {/* <Link to={`/content/${data.id}`}><img src={data.img} width="100px" alt="Fruit juice image" className='' /></Link><br /> */}
-              <button>{data.buttonName}</button>
-              <button>{data.addcart}</button>
-              <input type="checkbox" />{data.kg}
+              <div style={{ marginTop: "10px" }}><span style={{ marginLeft: "10px" }}><button className="butn" style={{ backgroundColor: "white", color: "blue", borderRadius: "10px", padding: "5px" }}>{data.buttonName}</button></span>
+                <span style={{ marginLeft: "10px" }}><button className="butn" style={{ backgroundColor: "white", color: "blue", borderRadius: "10px", padding: "5px" }}>{data.addcart}</button></span>
+              </div>
             </div>
           ))
         }

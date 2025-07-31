@@ -1,23 +1,26 @@
 import React from 'react'
-import { json } from '../data/data'
+import { juice } from '../data/juice'
 // import "Juice.css"
 
 const Juice = () => {
-  console.log(json, 'json')
+  console.log(juice, 'juice')
 
   return (
     <div>
-      <div className='juicecontainer1'>
-        <div className="juice1"></div>
-        <div className="juice2"></div>
-        <div className="juice3"></div>
-      </div>
-      <div className='juicecontainer2'>
-        <h1>juice</h1>
-        <div className="juice1"></div>
-        <div className="juice2"></div>
-        <div className="juice3"></div>
-      </div>
+      < div style={{ margin: "0px", display: "flex", boxSizing: "border-box", position: "relative", padding: "10px  " }}>
+        {
+          juice.map((data) => (
+            <div key={data.id} className={data.cls} style={{ padding: "50px", marginLeft: "50px", alignitem: "center" }}>
+              <img src={data.img} alt="image" style={{ width: "200px", height: "150px" }} />
+              <label style={{ textShadow: "0px 5px 10px", fontSize: "15px", fontWeight: "20px" }} >1 KG Rs :{data.label}</label>
+              <h2>{data.header}</h2>
+              <div style={{ marginTop: "20px", marginLeft: "50px" }}>
+                <span style={{ marginLeft: "10px" }}><button className="butn" style={{ cursor: "pointer", backgroundColor: "white", color: "blue", borderRadius: "10px", padding: "5px" }}>{data.buttonName}</button></span>
+              </div>
+            </div>
+          ))
+        }
+      </div >
     </div>
   )
 }

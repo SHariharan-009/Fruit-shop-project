@@ -2,9 +2,10 @@ import app from "../assets/img/app.png"
 import org from "../assets/img/org.png"
 import grp from "../assets/img/grap.png"
 import pin from "../assets/img/pin.png"
-
-
-
+import Banana from "../assets/img/banana.jpeg"
+import Watermelon from "../assets/img/water.jpeg"
+import Strawberry from "../assets/img/strawbery.png"
+import Pomegranate from "../assets/img/pome.jpeg"
 
 export const img2 = [
     {
@@ -52,34 +53,38 @@ export const img2 = [
 export const img2a = [
     {
         id: 1,
-        // img:,
-        label: "1",
-        header: "2",
-        buttonName: "3",
+        img: Banana,
+        label: "100",
+        header: "Banana ",
+        buttonName: "Buy now",
+        addcart: "Add to card",
         cls: "cd2aimg1"
     },
     {
         id: 2,
-        // img:,
-        label: "1",
-        header: "2",
-        buttonName: "3",
+        img: Watermelon,
+        label: "80",
+        header: "Watermelon  ",
+        buttonName: "Buy now",
+        addcart: "Add to card",
         cls: "cd2aimg2"
     },
     {
         id: 3,
-        // img:,
-        label: "1",
-        header: "2",
-        buttonName: "3",
+        img: Strawberry,
+        label: "300",
+        header: "Strawberry",
+        buttonName: "Buy now",
+        addcart: "Add to card",
         cls: "cd2aimg3"
     },
     {
         id: 1,
-        // img:,
-        label: "1",
-        header: "2",
-        buttonName: "3",
+        img: Pomegranate,
+        label: "250",
+        header: "Pomegranate ",
+        buttonName: "Buy now",
+        addcart: "Add to card",
         cls: "cd2aimg4"
     }
 ]

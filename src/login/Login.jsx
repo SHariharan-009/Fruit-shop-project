@@ -3,8 +3,9 @@ import "./Login.css"
 import { useState } from 'react'
 import { Link, useNavigate } from "react-router-dom"
 import { login } from "../api/api"
-import { FaEye, FaEyeSlash, FaRegUserCircle } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaRegUserCircle, FaGoogle, FaGithub, FaLinkedin } from "react-icons/fa";
 import bg1 from "../assets/img/bg1.jpeg"
+
 
 
 const Login = () => {
@@ -62,9 +63,10 @@ const Login = () => {
             }}>
             <div className='login' style={{}}>
 
-                <label className='heading'>User login</label><br />
+                <label className='heading '>User login</label><br />
                 <div className="cont">
-                    <label>User name :</label><input type='email' placeholder='    Username' value={email} required
+                    <label>User name :</label>
+                    <input type='email' placeholder='    Username' value={email} required
                         onChange={(e) => setemail(e.target.value)} ></input><span style={{ color: "black", padding: "5px", fontSize: "20px", marginRight: "50px" }}><FaRegUserCircle /></span><br />
                     <p className='err' style={{ color: "red", fontSize: "12px" }}>{erroremail}</p><br />
                     <label>Password :</label><input type={iconvissible ? "text" : "password"} placeholder='  password' value={password} required
@@ -75,6 +77,8 @@ const Login = () => {
                 <button type='submit' onClick={submitfunc}>Submit</button>
                 <button type='cancel'>cancel</button>
                 <p style={{ marginLeft: "15%", padding: "10px", color: "white" }}>Don't have account create new account <Link to="/Signup" style={{ color: "yellow", textDecoration: "none" }}>Signup</Link></p>
+
+                <label className="flex justify-center gap-8 text-white text-[30px] p-4" ><FaGoogle className="hover:bg-blue-700 p-8 rounded-full cursor-pointer" /><FaLinkedin className="hover:bg-blue-700 p-5 rounded-full cursor-pointer" /><FaGithub className="hover:bg-blue-700 p-5 rounded-full cursor-pointer" /></label>
             </div>
         </div >
     )
