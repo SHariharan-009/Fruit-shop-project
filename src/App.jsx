@@ -11,7 +11,11 @@ import './App.css'
 import Signup from './Signup/Signup'
 import Dashboard from './dashboard/dashboard'
 import Detailbar from './header/Detailbar.JSX'
+import Cartdetails from './content/cartdetails'
 import Socialmedia from './content/Socialmedia'
+import Overallfruits from './content/Overallfruits'
+import Overallsnacks from './content/Overallsnacks'
+import Overalljuice from './content/Overalljuice'
 
 function App() {
   return (
@@ -23,12 +27,17 @@ function App() {
         <Route path="/Login" element={<Login />} />
         <Route path="/Signup" element={<Signup />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/Detailbar" element={<Detailbar />} />
+        {/* <Route path="/Detailbar" element={<Detailbar />} /> */}
         <Route path="/Order" element={<Order />} />
         <Route path="/Juice" element={<Juice />} />
         <Route path="/Fruits" element={<Fruits />} />
         <Route path="/Snacks" element={<Snacks />} />
+        <Route path="/Cartdetails" element={<Cartdetails />} />
+        <Route path="/Overallfruits" element={<Overallfruits />} />
+        <Route path="/Overalljuice" element={<Overalljuice />} />
+        <Route path="/Overallsnacks" element={<Overallsnacks />} />
       </Routes>
+
     </Fragment>
   )
 }

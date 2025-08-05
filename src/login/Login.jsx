@@ -6,8 +6,6 @@ import { login } from "../api/api"
 import { FaEye, FaEyeSlash, FaRegUserCircle, FaGoogle, FaGithub, FaLinkedin } from "react-icons/fa";
 import bg1 from "../assets/img/bg1.jpeg"
 
-
-
 const Login = () => {
     const [email, setemail] = useState("@gmail.com")
     const [password, setpassword] = useState("")
@@ -49,37 +47,67 @@ const Login = () => {
 
     return (
 
-        <div
-            style={{
-                width: "100%",
-                height: "550px",
-                backgroundImage: `url(${bg1})`,
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-                backgroundAttachment: "fixed",
-                marginTop: "0px",
-                display: "flex",
-                alignItem: "center"
-            }}>
-            <div className='login' style={{}}>
+        <div className={`w-full h-[500px] bg-fixed bg-[url('${bg1}')] bg-fixed`}
+        >
+            <div className='w-[450px] bg-blue-200 rounded-2xl shadow-lg p-6 mt-10 mx-auto relative' style={{ padding: "20px" }}>
 
-                <label className='heading '>User login</label><br />
+                <label className='text-3xl font-bold text-center text-blue-600 mb-6'>User login</label><br />
                 <div className="cont">
-                    <label>User name :</label>
-                    <input type='email' placeholder='    Username' value={email} required
-                        onChange={(e) => setemail(e.target.value)} ></input><span style={{ color: "black", padding: "5px", fontSize: "20px", marginRight: "50px" }}><FaRegUserCircle /></span><br />
-                    <p className='err' style={{ color: "red", fontSize: "12px" }}>{erroremail}</p><br />
-                    <label>Password :</label><input type={iconvissible ? "text" : "password"} placeholder='  password' value={password} required
-                        onChange={(e) => setpassword(e.target.value)}></input>
-                    <span onClick={() => vissblefunc()} style={{ fontSize: "20px", color: "blue", marginRight: "0px", marginLeft: "340px", marginTop: "50px", marginBottom: "0px" }}> {iconvissible ? <FaEye /> : <FaEyeSlash />}</span>
-                    <p className='err'>{errorpassword}</p><br />
-                </div>
-                <button type='submit' onClick={submitfunc}>Submit</button>
-                <button type='cancel'>cancel</button>
-                <p style={{ marginLeft: "15%", padding: "10px", color: "white" }}>Don't have account create new account <Link to="/Signup" style={{ color: "yellow", textDecoration: "none" }}>Signup</Link></p>
 
-                <label className="flex justify-center gap-8 text-white text-[30px] p-4" ><FaGoogle className="hover:bg-blue-700 p-8 rounded-full cursor-pointer" /><FaLinkedin className="hover:bg-blue-700 p-5 rounded-full cursor-pointer" /><FaGithub className="hover:bg-blue-700 p-5 rounded-full cursor-pointer" /></label>
-            </div>
+                    <div className="relative">
+
+                        <label className='block text-black font-medium mb-1' style={{ padding: "10px" }}>User name :</label>
+                        <div className="flex items-center bg-amber-50 rounded-2xl px-4">
+
+                            <input type='email' placeholder='    Username' value={email} required
+                                onChange={(e) => setemail(e.target.value)} className="flex-1 py-2 bg-transparent outline-none" ></input>
+
+                            <FaRegUserCircle className="text-gray-700 text-xl" /><br />
+                        </div>
+
+                        <p className='text-red-600 text-sm mt-1'>{erroremail}</p><br />
+
+                    </div>
+
+                    <div className="relative">
+
+                        <label className='ablock text-black font-medium mb-1'>Password :</label>
+
+                        <div className="flex items-center bg-white rounded-2xl px-4">
+
+                            <input type={iconvissible ? "text" : "password"} placeholder='  password' value={password} required
+                                onChange={(e) => setpassword(e.target.value)} className="flex-1 py-2 bg-transparent outline-none"></input>
+
+                            <span
+                                className="text-blue-700 text-xl cursor-pointer"
+                                onClick={() => vissblefunc()}
+                            >
+                                {iconvissible ? <FaEye /> : <FaEyeSlash />}
+                            </span>
+                        </div>
+
+                        <p className='text-red-600 text-sm mt-1'>{errorpassword}</p><br />
+
+                    </div>
+
+                    <div className="flex justify-center gap-6 mt-4">
+
+                        <button type='submit' onClick={submitfunc} className='bg-blue-700 text-white px-6 py-2 rounded-2xl hover:bg-white hover:text-black hover:font-bold transition'>Submit</button>
+
+                        <button type='cancel' className='bg-red-500 text-white px-6 py-2 rounded-2xl hover:bg-white hover:text-black hover:font-bold transition'>cancel</button>
+                    </div>
+
+                    <p className='text-center text-sm mt-4 text-black'>Don't have account create new account
+
+                        <Link to="/Signup" className="text-yellow-600 font-semibold hover:underline">  Signup</Link></p>
+
+                    <div className="flex justify-center mt-4 w-full h-[50px] items-center" >
+                        <FaGoogle className="text-3xl text-white bg-blue-600 p-2 rounded-full cursor-pointer hover:bg-blue-800 transition" />
+                    </div>
+                    <label >Are you a vendor? Login</label>
+                    <label > Are you a City Manager? Login</label>
+                </div>
+            </div >
         </div >
     )
 }

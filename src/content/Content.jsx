@@ -12,8 +12,9 @@ import Trending from './Trending '
 import Bestsell from './Bestsell'
 import Enquery from './Enquery'
 import Rating from './Rating'
-import Footer from '../footer/Footer'
+import Footer from "../footer/Footer"
 import { FaChevronCircleRight, FaChevronCircleLeft } from "react-icons/fa";
+import Socialmedia from './Socialmedia'
 
 
 const Content = () => {
@@ -67,41 +68,34 @@ const Content = () => {
 
 
   return (
-    <div >
+    <div className='font-poppins overflow-hidden'>
 
-      <div className=' font-poppins '
-        style={{
-          display: "flex", width: "100%", height: "460px", overflow: "hidden", opacity: "0.8", backgroundAttachment: "fixed", backgroundRepeat: "no-repeat", padding: "10px"
-        }}
+      <div className='relative w-full h-[450px]'
       >
-        <button className=' cursor-pointer' onClick={lftclkfunc}><FaChevronCircleLeft /></button>
 
-        <div style={{ width: "100%", height: "510px", backgroundColor: "transparent" }}>
+        <h2 className='z-100 absolute text-4xl font-bold text-center content-center text-neutral-950 animate-pulse' >{imageArray[direction]?.text}</h2>
 
-          <h2 className='font-popins absolute text-4xl font-bold text-center text-balance text-neutral-950 text-shadow-zinc-100 animate-pulse' style={{ padding: "10px" }}>{imageArray[direction]?.text} </h2>
+        <img src={imageArray[direction]?.img} alt={`Juice`} className='w-full h-full object-cover rounded-xl' />
 
-          <img src={imageArray[direction]?.img} alt={`Juice}`} className='w-screen shadow-gray-950 opacity-[]' />
+        <button className='z-100  text-3xl text-gray-700 hover:text-black cursor-pointer' onClick={lftclkfunc}><FaChevronCircleLeft /></button>
 
-        </div>
+        <button className='ml-[1300px] right-[5px] z-100 absolute text-3xl text-gray-700 hover:text-black cursor-pointer' onClick={rgtclkfunc}><FaChevronCircleRight /></button>
 
-        <button className=' cursor-pointer' onClick={rgtclkfunc}><FaChevronCircleRight /></button>
+        <div >
 
-        <div className='absolute top-[380px] left-16'>
-
-          <div className=' flex justify-around gap-6 w-full pointer-cursor m-10 h-[180px] animate-bounce' >
+          <div className='absolute inset-0 flex justify-around items-center px-10 mt-110' >
             {
-
               json.map((data) => (
 
-                <div key={data.id} className=" font-poppins w-96 rounded-xl bg-amber-50 opacity-[0.8] hover:bg-gray-400" >
+                <div key={data.id} className={`items-center w-[300px] h-[180px] bg-gradient-to-br from-green-100 to-lime-400 bg-opacity-1 hover:bg-gray-300 p-4 rounded-xl shadow-lg transition duration-300 bg-[url('${data.img}')] bg-cover bg-center border`} >
 
-                  <label style={{ marginLeft: "30%", padding: "5px" }} className='font-bold text-3xl'>{data.label}</label>
+                  <label className='font-bold text-2xl sm:text-3xl text-center'>{data.label}</label>
 
-                  <h2 className='font-medium text-2xl text-center'>{data.header}</h2>
+                  <h2 className='font-medium text-xl sm:text-[15px] text-center pt-5'>{data.header}</h2>
 
-                  <img src={data.img} width="100px" alt="Fruit juice image" className=' mb-0 w-[120px] h-[120px]' />
+                  <button className='items-center ml-[150px] mt-0px w-[120px] h-[50px] font-bold bg-emerald-300 hover:bg-emerald-400 rounded-2xl animate-pulse' onClick={() => handleNavigate(data?.id)}>{data.buttonName}</button>
 
-                  <button className='text-center font-bold cursor-pointer mt-[150px] animate-pulse hover:bg-emerald-300 rounded-2xl' style={{ padding: "10px", marginLeft: "50%", }} onClick={() => handleNavigate(data?.id)}>{data.buttonName}</button>
+                  {/* <img src={data.img} alt="Fruit juice image" className='w-[100px] h-[70px] opacity-[0.8]' /> */}
 
                 </div>
               ))
@@ -109,6 +103,7 @@ const Content = () => {
           </div >
         </div>
       </div>
+      <Socialmedia />
       <Category />
       <Arrived />
       <Trending />

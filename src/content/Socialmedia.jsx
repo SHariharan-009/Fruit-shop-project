@@ -6,10 +6,14 @@ import insta from "../assets/img/insta.jpeg"
 
 const Socialmedia = () => {
     return (
-        <div className='mt-[500px] flex-col justify-between absolute z-100 bg-black rounded-4xl inline-block' style={{ padding: "10px", marginLeft: "1270px" }}>
-            <img className='w-[60px] h-[60px] ml-5 mr-0 bg-transparent rounded-4xl cursor-pointer p-10' src={whatsapp} alt="Whatapp img" />
-            <img className='w-[60px] h-[60px] ml-5 mr-0 bg-white rounded-4xl cursor-pointer' src={fb} alt="Fb img" />
-            <img className='w-[60px] h-[60px] ml-5 mr-0 bg-transparent rounded-4xl cursor-pointer' src={insta} alt="Instagram img" />
+        <div className='fixed top-[300px] right-2 z-[100] flex flex-col items-center bg-black rounded-[20px] gap-2 p-2 animate-slide-in shadow-xl animate-pulse'>
+
+            <img className='w-[50px] h-[50px] rounded-full cursor-pointer hover:scale-110 hover:shadow-lg transition-all duration-300' src={whatsapp} alt="WhatsApp" />
+
+            <img className='ww-[50px] h-[50px] rounded-full cursor-pointer hover:scale-110 hover:shadow-lg transition-all duration-300' src={fb} alt="Facebook" />
+
+            <img className='w-[50px] h-[50px] rounded-full cursor-pointer hover:scale-110 hover:shadow-lg transition-all duration-300' src={insta} alt="Instagram" />
+
         </div>
     )
 }

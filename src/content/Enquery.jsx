@@ -8,17 +8,24 @@ const Enquery = () => {
                 <label className='text-[3.5rem] font-bold'> Get<span className='text-orange-500 '> 25% <br />Discount </span>on your <br />first purchase</label>
 
             </div>
-            <form style={{ marginLeft: "25%", padding: "px", alignContent: "center" }} >
-                <label style={{ alignItems: "center", fontSize: "32px", fontWeight: "700" }}>Enquery</label><br />
+            <form className='ml-[25%] content-center' >
+                <label className='items-center text-[32px] font-bold'>Enquery</label><br />
+
                 <label style={{ paddingTop: "5px" }}>Name</label><br />
-                <input className='bg-white' type="text" required placeholder='   Name' style={{ marginTop: "5px", backgroundColor: "white", width: "500px", height: "35px", borderRadius: "10px" }} /><br />
+
+                <input className='bg-white w-[500px] mt-[5px] h-[35px] rounded-2xl' type="text" required placeholder='   Name' /><br />
+
                 <label style={{ marginTop: "15px" }}>Pnone number</label><br />
-                <input className='bg-white' type="number" required placeholder='   Pnone number' style={{ backgroundColor: "white", width: "500px", height: "35px", borderRadius: "10px", marginTop: "5px" }} /><br />
+                <input type="number" required placeholder='   Pnone number' className='bg-white w-[500px] mt-[5px] h-[35px] rounded-2xl' /><br />
+
                 <label >Email</label><br />
-                <input type="email" required placeholder='   Email address' className='bg-white' style={{ backgroundColor: "white", width: "500px", height: "35px", borderRadius: "10px", marginTop: "5px" }} /><br />
-                <p >Your Message</p><input type="text" className='bg-white' placeholder='   Message' style={{ backgroundColor: "white", width: "500px", height: "110px", borderRadius: "10px", marginTop: "5px" }} /><br />
-                <button style={{ marginTop: "30px", padding: "10px", borderRadius: "10px", cursor: "pointer", backgroundColor: "yellow", width: "100px" }}>Submit</button>
-                <button style={{ marginLeft: "30px", marginTop: "30px", padding: "10px", borderRadius: "10px", cursor: "pointer", backgroundColor: "yellow", width: "100px" }}>Cancel</button>
+                <input type="email" required placeholder='   Email address' className='bg-white w-[500px] mt-[5px] h-[35px] rounded-2xl' /><br />
+
+                <p >Your Message</p><input type="text" className='bg-white w-[500px] mt-[5px] h-[110px] rounded-2xl' placeholder='   Message' /><br />
+
+                <button style={{ padding: "10px" }} className='mt-[30px] rounded-2xl cursor-pointer bg-amber-300 w-[100px]'>Submit</button>
+
+                <button style={{ padding: "10px", marginLeft: "30px", marginRight: "30px" }} className='rounded-2xl cursor-pointer bg-amber-300 w-[100px] hover:transition-colors'>Cancel</button>
             </form>
         </div >
     )

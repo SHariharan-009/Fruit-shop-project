@@ -8,6 +8,7 @@ import Strawberry from "../assets/img/strawbery.png"
 import Pomegranate from "../assets/img/pome.jpeg"
 
 export const img2 = [
+
     {
         id: 1,
         img: app,
@@ -18,6 +19,7 @@ export const img2 = [
         // kg: kgvalue,
         cls: "cd2img1"
     },
+
     {
         id: 2,
         img: org,

@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react'
-import "./Header.css"
-import { Link } from "react-router-dom"
+import { Link, useNavigate, useSearchParams } from "react-router-dom"
 import { FaSearch, FaRegUser, FaRegHeart } from "react-icons/fa";
 import { BsToggle2On, BsToggle2Off } from "react-icons/bs";
 import { myContext } from '../Context/Context'
@@ -11,26 +10,76 @@ const Header = () => {
 
   const { clkcutn, setclkcutn } = useContext(myContext)
 
+  const [clkbut, setclkbut] = useState(false)
+
+  const clkfunc = () => {
+    setclkbut(!clkbut)
+
+  }
+  const navigate = useNavigate();
+
+  const handleChange = (navigatevalue) => {
+
+    if (navigatevalue) {
+
+      navigate(navigatevalue);
+
+    }
+  }
+
   return (
-    <div className='navbar' style={{ backgroundColor: clkcutn ? "white" : "black", backgroundAttachment: "fixed" }}>
+    <div className=''>
 
-      < Link to="/Detailbar" className='hover:bg-gray-200 z-100'><FiAlignJustify style={{ margin: "0px" }} className="hover:bg-green" /> </Link> <label >Shop name</label>
+      <div className='fiwed w-full h-[50px] flex items-center justify-around px-5 bg-white shadow-md  text-black font-bold' style={{ padding: "0 20px" }} >
 
-      <div className="menu">
-        <select required>
-          <option value="">  - All categories -  </option>
-          <option value="Fruits">Fruits</option>
-          <option value="Juices">Juices</option>
-          <option value="Snacks">Snacks</option>
-        </select>
-        <input type="text" className='searchbar' placeholder='  Search' required />
-        <span style={{ padding: "0px" }}><FaSearch /></span>
-        <Link to="/" className='hover:bg-gray-200 z-100' >Home</Link>
-        <Link to="/Login" className='text-center items-center hover:bg-gray-200 '><span ><FaRegUser /></span></Link>
-        <Link to="" className='hover:bg-gray-200 '><FaShoppingCart /></Link>
-        <Link to="/Order" className='hover:bg-gray-200 '>Order</Link>
-        <Link className='hover:bg-gray-200 ' to="" onClick={() => setclkcutn(prev => !prev)}> {clkcutn ? <BsToggle2On /> : <BsToggle2Off />}</Link>
+        < Link to="" className='hover:bg-gray-200 p-2 rounded-md ' onClick={clkfunc}><FiAlignJustify className="w-[20px] h-[20px] md:w-[30px] md:h-[30px]" /> </Link>
+
+        <label className=' text-[10px] md:text-[20px] font-bold text-neutral-800 tracking-wide'>Shop name</label>
+
+        <div className=" flex justify-around items-center gap-5 ">
+
+          <Link to="/" className=' text-[10px] md:text-[20px] h-[30px] rounded-2xl  hover:underline '> Home </Link>
+
+          <select className='h-[15px] md:h-[30px] rounded-2xl text-[7px] md:text-[16px] border-2'
+            onChange={(e) => handleChange(e.target.value)} required>
+
+            <option value="/">- All categories -</option>
+            <option value="/Overallfruits">Fruits</option>
+            <option value="/Overalljuice">Juices</option>
+            <option value="/Overallsnacks">Snacks</option>
+
+          </select>
+
+          <div className="relative w-full max-w-[200px]">
+
+            <input type="text" className=' h-[15px] md:h-[30px]  w-full rounded-2xl text-[7px] md:text-[16px] border-2 pl-3 pr-8 sm:p-[5px] md:p-[10px]' placeholder='  Search' required />
+
+            <FaSearch className='absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500 w-3 h-3 md:w-4 md:h-4' />
+
+          </div>
+
+          <Link to="/Cartdetails"><FaShoppingCart className='w-[12px] h-[12px] md:w-[24px] md:h-[24px] text-black hover:text-green-600' /></Link>
+
+        </div>
+
       </div>
+      {
+        clkbut && (
+
+          <div className='flex flex-col p-4 gap-4 bg-white text-black 
+  w-full sm:w-[250px] h-screen sm:h-[500px] 
+  absolute left-0 top-[60px] z-[100] border-2 rounded-2xl sm:rounded-2xl 
+  shadow-lg'>
+
+            <Link to="/Login" className='flex items-center gap-2 hover:bg-gray-200 p-2 rounded '><FaRegUser />User</Link>
+
+            <Link to="/Order" className='hover:bg-gray-200 p-2 rounded '>Order</Link>
+
+            <Link className='flex items-center gap-2 hover:bg-gray-200 p-2 rounded ' to="" onClick={() => setclkcutn(prev => !prev)}> {clkcutn ? <BsToggle2On /> : <BsToggle2Off />} Dark mode</Link>
+          </div>
+
+        )
+      }
     </div>
   )
 }

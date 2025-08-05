@@ -8,7 +8,7 @@ const Arrived = () => {
     return (
         <div>
             <div>
-                <label style={{ fontSize: "2rem", fontWeight: "700", padding: "10px" }}>Newly Arrived items</label>
+                <label style={{ padding: "10px" }} className='font-bold text-[32px] '>Newly Arrived items</label>
             </div>
             <div className='flex justify-between mt-[20px] cursor-pointer animate-pulse' style={{ padding: "40px" }} >
 

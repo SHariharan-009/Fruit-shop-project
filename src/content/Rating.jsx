@@ -12,65 +12,69 @@ const Rating = () => {
         if (add == "" && add.trim() == "") {
             alert("Please enter feedback")
         }
+        const data =
+        {
+            name: "",
+            cont: add,
+            rate: star
+        }
 
-        setstar(star)
-
-        const data = [
-            {
-                name: "",
-                cont: setdata(add),
-                rate: setdata(star)
-            }
-        ]
         console.log("data", data)
+
         setdata((prev) => [...prev, data])
         setadd("")
         setstar(0)
         alert("Feedback updated")
-
     }
-
+    console.log(data)
     return (
         <div className=''>
 
-            <div style={{ marginLeft: "" }}>
-                <label style={{ fontSize: "32px", marginTop: "20px", fontWeight: "700", padding: "10px", alignItems: "center" }}>Review</label>
+            <div >
+                <label className='text-[32px] mt-[20px] font-bold items-center' style={{ padding: "10px" }}>Review</label>
                 <br />
 
-                <input value={add} onChange={(e) => setadd(e.target.value)} style={{ width: "300px", height: "30px", borderRadius: "10px", padding: "5px", backgroundColor: "lightblue" }} type="text" placeholder='Add feedback' required />
+                <input value={add} onChange={(e) => setadd(e.target.value)} style={{ padding: "5px" }} className='w-[300px] h-[30px] rounded-2xl bg-blue-200' type="text" placeholder='Add feedback' required />
 
-                <div style={{ display: "flex", padding: "10px" }}>
-                    <h2 value={star} onChange={() => setstar(1)} style={{ cursor: "pointer", fontWeight: "400px", fontSize: "25px" }}> <FaRegStar /></h2>
+                <div style={{ padding: "10px" }} className='flex'>
+                    <h2 value={star} onClick={() => setstar(1)} className='cursor-pointer font-bold text-[25px] hover:text-red-500'> <FaRegStar /></h2>
 
-                    <h2 value={star} onChange={() => setstar(2)} style={{ cursor: "pointer", fontWeight: "400px", fontSize: "25px" }}><FaRegStar /></h2>
+                    <h2 value={star} onClick={() => setstar(2)} className='cursor-pointer font-bold text-[25px] hover:text-red-500'><FaRegStar /></h2>
 
-                    <h2 value={star} onChange={() => setstar(3)} style={{ cursor: "pointer", fontWeight: "400px", fontSize: "25px" }}> <FaRegStar /></h2>
+                    <h2 value={star} onClick={() => setstar(3)} className='cursor-pointer font-bold text-[25px] hover:text-red-500'> <FaRegStar /></h2>
 
-                    <h2 value={star} onChange={() => setstar(4)} style={{ cursor: "pointer", fontWeight: "400px", fontSize: "25px" }}><FaRegStar /></h2>
+                    <h2 value={star} onClick={() => setstar(4)} className='cursor-pointer font-bold text-[25px] hover:text-red-500'><FaRegStar /></h2>
 
-                    <h2 value={star} onChange={() => setstar(5)} style={{ cursor: "pointer", fontWeight: "400px", fontSize: "25px" }}><FaRegStar /></h2>
+                    <h2 value={star} onClick={() => setstar(5)} className='cursor-pointer font-bold text-[25px] hover:text-red-500'><FaRegStar /></h2>
 
                     <h2>  {data.rate == 1 ? 1 : 0}/5 ratings</h2>
 
                 </div>
 
-                <button onClick={clikfunc} style={{ marginLeft: "10px", backgroundColor: "yellow", width: "50px", borderRadius: "10px", fontSize: "20px" }}> Add</button>   <br />
+                <button className='bg-yellow-600 text-white font-semibold px-6 py-3 rounded-2xl shadow-lg transition duration-300 ease-in-out transform hover:scale-105 hover:bg-yellow-700 hover:shadow-xl active:scale-95' onClick={clikfunc} > Add</button> <br />
             </div>
 
-
             {data?.map((value) => {
+                return (
+                    <div className='flex'>
 
-                <div style={{ display: "flex" }}>
+                        <p style={{ fontWeight: "400", fontSize: "20px" }}>{value.cont}</p><br />
 
-                    <p style={{ fontWeight: "400", fontSize: "20px" }}>{value.cont}</p><br />
+                        {
+                            Array.from({ length: value.rate }).map(() => (
+                                <FaStar />
+                            ))
+                        }
 
-                    <p style={{ fontWeight: "", fontSize: "15px" }}> {value.rate == 1 ? <FaRegStar /> : <FaStar />}</p>
-                    <p style={{ fontWeight: "", fontSize: "15px" }}> {value.rate == 2 ? <FaRegStar /> : <FaStar />}</p>
-                    <p style={{ fontWeight: "", fontSize: "15px" }}> {value.rate == 3 ? <FaRegStar /> : <FaStar />}</p>
-                    <p style={{ fontWeight: "", fontSize: "15px" }}> {value.rate == 4 ? <FaRegStar /> : <FaStar />}</p>
-                    <p style={{ fontWeight: "", fontSize: "15px" }}> {value.rate == 5 ? <FaRegStar /> : <FaStar />}</p>
+                        {/* <p className='text-[15px]'> {value.rate == 1 ? <FaRegStar /> : <FaStar />}</p>
+                        <p className='text-[15px]'> {value.rate == 2 ? <FaRegStar /> : <FaStar />}</p>
+                        <p className='text-[15px]'> {value.rate == 3 ? <FaRegStar /> : <FaStar />}</p>
+                        <p className='text-[15px]'> {value.rate == 4 ? <FaRegStar /> : <FaStar />}</p>
+                        <p className='text-[15px]'> {value.rate == 5 ? <FaRegStar /> : <FaStar />}</p> */}
 
-                </div>
+                    </div>
+                )
+
             })}
 
         </div>

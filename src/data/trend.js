@@ -19,6 +19,8 @@ export const trend = [
         img1: heart,
         img2: redheart,
         heart: false,
+        quantity: "10",
+        count: 0
 
     },
     {
@@ -32,7 +34,8 @@ export const trend = [
         img1: heart,
         img2: redheart,
         heart: false,
-
+        quantity: "10",
+        count: 0
     },
     {
         id: 3,
@@ -45,6 +48,8 @@ export const trend = [
         img1: heart,
         img2: redheart,
         heart: false,
+        quantity: "10",
+        count: 0
 
     },
     {
@@ -58,6 +63,8 @@ export const trend = [
         img1: heart,
         img2: redheart,
         heart: false,
+        quantity: "10",
+        count: 0
     },
     {
         id: 5,
@@ -70,5 +77,7 @@ export const trend = [
         img2: redheart,
         img1: heart,
         heart: false,
+        quantity: "10",
+        count: 0
     }
 ]

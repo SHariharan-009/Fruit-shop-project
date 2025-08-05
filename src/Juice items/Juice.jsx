@@ -1,27 +1,31 @@
 import React from 'react'
 import { juice } from '../data/juice'
-// import "Juice.css"
 
 const Juice = () => {
   console.log(juice, 'juice')
 
   return (
-    <div>
-      < div style={{ margin: "0px", display: "flex", boxSizing: "border-box", position: "relative", padding: "10px  " }}>
-        {
-          juice.map((data) => (
-            <div key={data.id} className={data.cls} style={{ padding: "50px", marginLeft: "50px", alignitem: "center" }}>
-              <img src={data.img} alt="image" style={{ width: "200px", height: "150px" }} />
-              <label style={{ textShadow: "0px 5px 10px", fontSize: "15px", fontWeight: "20px" }} >1 KG Rs :{data.label}</label>
-              <h2>{data.header}</h2>
-              <div style={{ marginTop: "20px", marginLeft: "50px" }}>
-                <span style={{ marginLeft: "10px" }}><button className="butn" style={{ cursor: "pointer", backgroundColor: "white", color: "blue", borderRadius: "10px", padding: "5px" }}>{data.buttonName}</button></span>
-              </div>
+
+    < div className='flex flex-wrap p-2 m-0 relative box-border'>
+      {
+        juice.map((data) => (
+          <div key={data.id} className="flex flex-col items-center p-12 ml-12">
+
+            <img src={data.img} alt="image" className='w-[200px] h-[150px] object-cover' />
+
+            <label className="text-[15px] font-bold drop-shadow-md mt-2">1 KG Rs :{data.label}</label>
+
+            <h2 className="mt-1 text-lg font-semibold">{data.header}</h2>
+
+            <div className="mt-5 ml-12">
+
+              <span style={{ marginLeft: "10px" }}><button className="cursor-pointer bg-white text-blue-500 hover:text-black rounded-xl px-4 py-2 border border-blue-500 transition duration-200">{data.addcart}</button></span>
+
             </div>
-          ))
-        }
-      </div >
-    </div>
+          </div>
+        ))
+      }
+    </div >
   )
 }
 

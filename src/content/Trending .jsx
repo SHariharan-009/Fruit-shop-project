@@ -1,7 +1,11 @@
 import React, { use, useState } from 'react'
 import { trend } from '../data/trend'
+import { useContext } from 'react'
+import { myContext } from '../Context/Context'
+
 
 const Trending = () => {
+    //heat icon
     const [heart, setheart] = useState(false)
 
     // const [data, setData] = useState(false)
@@ -17,6 +21,20 @@ const Trending = () => {
         setheart(prev => !prev)
     }
 
+    //add cart 
+
+    const { items, setitems } = useContext(myContext)
+
+    const addcartfunc = (id) => {
+
+        const cartval = trend?.find((data) =>
+            data.id === id
+        )
+        setitems((prev) => [...prev, cartval]);
+
+        alert("product add to cart")
+    }
+
     return (
         <div>
             < div className='bg-transparent'>
@@ -27,7 +45,7 @@ const Trending = () => {
                         trend.map((data) => (
                             <div key={data.id} style={{ padding: "45px" }} className='content-center'
                             >
-                                <img onClick={() => clickfunc(data.id)}
+                                <img onClick={() => clickfunc(data.id)}  //heart icon
                                     src={heart === false ? data.img1 : data.img2}
                                     alt="heart" className='ml-[155px] w-[20px] h-[20px]'
                                 />
@@ -37,9 +55,12 @@ const Trending = () => {
 
                                 <h2 className='ml-[50px] mt-[10px] font-bold'>{data.header}</h2>
 
-                                <button className=' mt-[10px] cursor-pointer text-blue-800 ml-[50px]' style={{ padding: "5px" }}>{data.addcart}</button>
+                                {/* <input type="text" onChange={(e) => { setaddkg(e.target.value) }} /> }  */}
+
+                                <button className=' bg-blue-600 text-white font-semibold px-6 py-3 rounded-2xl shadow-lg transition duration-300 ease-in-out transform hover:scale-105 hover:bg-blue-700 hover:shadow-xl active:scale-95 ml-[50px] mt-[20px] cursor-pointer' onClick={() => addcartfunc(data.id)} style={{ padding: "5px" }}>{data.addcart}</button>
 
                             </div>
+
                         ))
                     }
                 </div >

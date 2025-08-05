@@ -7,10 +7,17 @@ import pin from "../assets/img/pin.png"
 export const myContext = createContext();
 
 const MyContextProvider = ({ children }) => {
-    const [footvalue, setfootvalue] = useState("")
+
+    // const [footvalue, setfootvalue] = useState("")
+
     const [kgvalue, setkgvalue] = useState("")
-    const [clkcutn, setclkcutn] = useState(true)
+
+    const [items, setitems] = useState([])
+
+    // const [clkcutn, setclkcutn] = useState(true)
+
     const [fruitData, setFruitData] = useState([
+
         {
             id: 1,
             img: app,
@@ -18,7 +25,7 @@ const MyContextProvider = ({ children }) => {
             header: "Apple",
             buttonName: "Buy now",
             addcart: "Add to card",
-            // kg: kgvalue,
+            kg: kgvalue,
             cls: "cd2img1"
         },
         {
@@ -28,7 +35,7 @@ const MyContextProvider = ({ children }) => {
             header: "Orange",
             buttonName: "Buy now",
             addcart: "Add to card",
-            // kg: kgvalue,
+            kg: kgvalue,
             cls: "cd2img2"
         },
         {
@@ -60,7 +67,7 @@ const MyContextProvider = ({ children }) => {
     }
     // console.log(data)
     return (
-        <myContext.Provider value={{ kgvalue, setkgvalue, data, footvalue, setfootvalue, fruitData, setFruitData, clkcutn, setclkcutn }} >
+        <myContext.Provider value={{ kgvalue, setkgvalue, data, fruitData, setFruitData, setitems, items }} >
             {children}
         </myContext.Provider  >
     )
