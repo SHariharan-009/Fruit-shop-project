@@ -35,12 +35,14 @@ const cartdetails = () => {
     //     setitems(newData)
     // }
 
-
-
     const handleAdd = (id) => {
         const newData = items.map((item) => {
             if (item.id === id) {
+
                 const newCount = (item.count || 1) + 1;
+                if (newCount > 10) {
+                    alert("FRUIT LIMIT 10KG ONLY")
+                }
                 return {
                     ...item,
                     count: newCount
@@ -50,6 +52,7 @@ const cartdetails = () => {
             return item;
         });
         setitems(newData);
+
     };
 
     const handleMinus = (id) => {
@@ -62,10 +65,32 @@ const cartdetails = () => {
                     // label: newCount * Number(item.label),
                 };
             }
+            else {
+                alert("Order accepts minimum 1kg only")
+            }
             return item;
         });
         setitems(newData);
     };
+
+    const totalAmount = items?.reduce((sum, item) => sum + item.label * item.count, 0);
+
+    const discount = (totalAmount >= 1000) ? totalAmount * 0.10 : 0;
+
+    const finalAmount = totalAmount >= 1000 ? totalAmount - discount : totalAmount;
+
+    const delfunc = (data) => {
+
+        const del = items.filter((item) => (item.id !== data.id))
+
+        setitems(del)
+
+        // setitems(items)
+
+        alert("selected cart item deleted successfully")
+
+    }
+
     return (
         <div>
             <div >
@@ -77,6 +102,7 @@ const cartdetails = () => {
                             <td className='p-4'>Price</td>
                             <td className='p-4'>kg</td>
                             <td className='p-4'>Tot rate</td>
+                            <td className='p-4'>delete item</td>
                         </tr>
                     </thead>
                     {items?.map((data) => (
@@ -88,6 +114,7 @@ const cartdetails = () => {
                             <td className='p-4'><label >{data?.label}</label></td>
 
                             <td className='p-4'>
+
                                 <button onClick={() => handleMinus(data.id)} className='border w-[30px] h-[30px] rounded-full flex items-center justify-center hover:bg-blue-400'><FaMinus /></button>
 
                                 <p>{data.count}</p>
@@ -96,21 +123,33 @@ const cartdetails = () => {
 
                             </td>
                             <td className='pl-5'><label >{data.label * data.count}</label></td>
+
+                            <td><button className='cursor-pointer hover:text-red-700' onClick={() => delfunc(data.id)}>Del</button></td>
                         </tr>
                     ))}
                 </table>
-                <table className='max-w-[400px] border border-gray-300 text-left text-sm font-bold mt-10 rounded-4xl'>
+
+                <table className='max-w-[500px] justify-center border border-gray-300 text-left text-sm font-bold mt-10 rounded-4xl'>
+
                     <tr className='bg-gray-100 text-[20px]'>
-                        <td className='p-4 border'>Items</td>
-                        <td className='p-4 border '>Discount 10%</td>
-                        <td className='p-4 border '>Total amount</td>
+                        <td className='p-4 border'>No of items</td>
+                        <td className='p-4 border'>Total amount</td>
+                        <td className='p-4 border '>10% - Discount </td>
+                        <td className='p-4 border '>Final amount</td>
                     </tr>
+                    {/* {items?.map((sum, item) => ( */}
                     <tr className='hover:bg-gray-50 text-[15px]'>
-                        <td className="p-4 border">s</td>
-                        <td className="p-4 border">s</td>
-                        <td className="p-4 border">s</td>
+                        <td className="p-4 border">{items?.length}</td>
+                        <td className="p-4 border">{totalAmount.toFixed(2)}</td>
+                        <td className="p-4 border">Rs. {discount.toFixed(2)}</td>
+                        <td className="p-4 border">Rs. {finalAmount.toFixed(2)}</td>
                     </tr>
+                    {/* ))} */}
                 </table>
+                <label className='text-red-600 text-[16px]'>"Get 10% discount on purchases over ₹1000."
+
+                </label>
+
             </div >
         </div >
     )

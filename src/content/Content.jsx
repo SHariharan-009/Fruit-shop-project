@@ -70,28 +70,28 @@ const Content = () => {
   return (
     <div className='font-poppins overflow-hidden'>
 
-      <div className='relative w-full h-[450px]'
+      <div className='relative w-full h-[450px] sm:w-screen'
       >
 
-        <h2 className='z-100 absolute text-4xl font-bold text-center content-center text-neutral-950 animate-pulse' >{imageArray[direction]?.text}</h2>
+        <h2 className='z-100 absolute text-2xl font-bold text-center text-balance content-center text-neutral-950 animate-pulse md:text-4xl' >{imageArray[direction]?.text}</h2>
 
-        <img src={imageArray[direction]?.img} alt={`Juice`} className='w-full h-full object-cover rounded-xl' />
+        <img src={imageArray[direction]?.img} alt={`Juice`} className='w-screen h-full object-cover rounded-xl md:w-full ' />
 
         <button className='z-100  text-3xl text-gray-700 hover:text-black cursor-pointer' onClick={lftclkfunc}><FaChevronCircleLeft /></button>
 
-        <button className='ml-[1300px] right-[5px] z-100 absolute text-3xl text-gray-700 hover:text-black cursor-pointer' onClick={rgtclkfunc}><FaChevronCircleRight /></button>
+        <button className='z-100 ml-[1300px] right-[5px]  absolute text-3xl text-gray-700 hover:text-black cursor-pointer' onClick={rgtclkfunc}><FaChevronCircleRight /></button>
 
         <div >
 
-          <div className='absolute inset-0 flex justify-around items-center px-10 mt-110' >
+          <div className='absolute inset-0 flex justify-around items-center px-5 mt-110 md:px-10' >
             {
               json.map((data) => (
 
-                <div key={data.id} className={`items-center w-[300px] h-[180px] bg-gradient-to-br from-green-100 to-lime-400 bg-opacity-1 hover:bg-gray-300 p-4 rounded-xl shadow-lg transition duration-300 bg-[url('${data.img}')] bg-cover bg-center border`} >
+                <div key={data.id} className={`items-center w-[100px] h-[80px] bg-gradient-to-br from-green-100 to-lime-400 bg-opacity-1 hover:bg-gray-300 p-4 rounded-xl shadow-lg transition duration-300 border md:w-[300px] md:h-[180px]`} >
 
-                  <label className='font-bold text-2xl sm:text-3xl text-center'>{data.label}</label>
+                  <label className='font-bold text-[12px] text-center sm:text-3xl '>{data.label}</label>
 
-                  <h2 className='font-medium text-xl sm:text-[15px] text-center pt-5'>{data.header}</h2>
+                  <h2 className='font-medium text-[10px] text-center pt-2 md:text-[20px] md:pt-2'>{data.header}</h2>
 
                   <button className='items-center ml-[150px] mt-0px w-[120px] h-[50px] font-bold bg-emerald-300 hover:bg-emerald-400 rounded-2xl animate-pulse' onClick={() => handleNavigate(data?.id)}>{data.buttonName}</button>
 

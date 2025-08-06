@@ -31,7 +31,7 @@ const Rating = () => {
         <div className=''>
 
             <div >
-                <label className='text-[32px] mt-[20px] font-bold items-center' style={{ padding: "10px" }}>Review</label>
+                <label className='text-[16px] md:text-[32px] mt-[30px] md:mt-[20px] font-bold items-center p-[10px]' >Review</label>
                 <br />
 
                 <input value={add} onChange={(e) => setadd(e.target.value)} style={{ padding: "5px" }} className='w-[300px] h-[30px] rounded-2xl bg-blue-200' type="text" placeholder='Add feedback' required />
@@ -47,11 +47,11 @@ const Rating = () => {
 
                     <h2 value={star} onClick={() => setstar(5)} className='cursor-pointer font-bold text-[25px] hover:text-red-500'><FaRegStar /></h2>
 
-                    <h2>  {data.rate == 1 ? 1 : 0}/5 ratings</h2>
+                    <h2>  {data.rate == 1 ? 1 : 0}/5 Ratings</h2>
 
                 </div>
 
-                <button className='bg-yellow-600 text-white font-semibold px-6 py-3 rounded-2xl shadow-lg transition duration-300 ease-in-out transform hover:scale-105 hover:bg-yellow-700 hover:shadow-xl active:scale-95' onClick={clikfunc} > Add</button> <br />
+                <button className='bg-yellow-600 text-white font-semibold px-3 text-center py-2 md:px-6 md:py-3rounded md:rounded-2xl shadow-lg transition duration-300 ease-in-out transform hover:scale-105 hover:bg-yellow-700 hover:shadow-xl active:scale-95' onClick={clikfunc} > Add</button> <br />
             </div>
 
             {data?.map((value) => {
