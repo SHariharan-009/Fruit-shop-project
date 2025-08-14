@@ -80,6 +80,7 @@ const Order = () => {
                 {data?.map((data, index) => (
 
                     <div key={index} style={{ display: "flex", justifyContent: "space-between", marginTop: "20px", alignItems: "center", padding: "10px" }}>
+
                         <p style={{ backgroundColor: "white", width: "430px", height: "50px", borderRadius: "10px", margin: "0px", padding: "10px" }} > {data.name} {data.kgs} Kg </p>
 
                         <button onClick={() => editfunc(data.newid)} style={{ color: "blue", width: "50px", padding: "5px", borderRadius: "50%", height: "50px", marginTop: "0px" }}><BiEditAlt /></button>

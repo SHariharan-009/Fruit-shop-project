@@ -15,7 +15,10 @@ export const snack = [
         label: "30",
         header: "mixer",
         buttonName: "Buy now",
-        addcart: "Add to card"
+        addcart: "Add to card",
+        quantity: "10",
+        minquantity: "1",
+        count: 1
     },
     {
         id: 2,
@@ -23,7 +26,10 @@ export const snack = [
         label: "50",
         header: "boonthi",
         buttonName: "Buy now",
-        addcart: "Add to card"
+        addcart: "Add to card",
+        quantity: "10",
+        minquantity: "1",
+        count: 1
     },
     {
         id: 3,
@@ -31,7 +37,10 @@ export const snack = [
         label: "60",
         header: "muruku",
         buttonName: "Buy now",
-        addcart: "Add to card"
+        addcart: "Add to card",
+        quantity: "10",
+        minquantity: "1",
+        count: 1
     },
     {
         id: 4,
@@ -39,7 +48,10 @@ export const snack = [
         label: "60",
         header: "psevu",
         buttonName: "Buy now",
-        addcart: "Add to card"
+        addcart: "Add to card",
+        quantity: "10",
+        minquantity: "1",
+        count: 1
     }
 ]
 
@@ -50,7 +62,10 @@ export const snack1 = [
         label: "30",
         header: "mixer",
         buttonName: "Buy now",
-        addcart: "Add to card"
+        addcart: "Add to card",
+        quantity: "10",
+        minquantity: "1",
+        count: 1
     },
     {
         id: 2,
@@ -58,7 +73,10 @@ export const snack1 = [
         label: "50",
         header: "boonthi",
         buttonName: "Buy now",
-        addcart: "Add to card"
+        addcart: "Add to card",
+        quantity: "10",
+        minquantity: "1",
+        count: 1
     },
     {
         id: 3,
@@ -66,7 +84,10 @@ export const snack1 = [
         label: "60",
         header: "muruku",
         buttonName: "Buy now",
-        addcart: "Add to card"
+        addcart: "Add to card",
+        quantity: "10",
+        minquantity: "1",
+        count: 1
     },
     {
         id: 4,
@@ -74,6 +95,9 @@ export const snack1 = [
         label: "60",
         header: "psevu",
         buttonName: "Buy now",
-        addcart: "Add to card"
+        addcart: "Add to card",
+        quantity: "10",
+        minquantity: "1",
+        count: 1
     }
 ]

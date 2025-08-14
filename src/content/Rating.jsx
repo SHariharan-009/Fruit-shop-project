@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { FaRegStar, FaStar } from "react-icons/fa";
+import { rating } from '../api/api';
 
 
 const Rating = () => {
@@ -8,7 +9,7 @@ const Rating = () => {
     const [star, setstar] = useState(0)
     const [data, setdata] = useState([])
 
-    const clikfunc = () => {
+    const clikfunc = async () => {
         if (add == "" && add.trim() == "") {
             alert("Please enter feedback")
         }
@@ -18,15 +19,15 @@ const Rating = () => {
             cont: add,
             rate: star
         }
-
-        console.log("data", data)
-
-        setdata((prev) => [...prev, data])
-        setadd("")
-        setstar(0)
-        alert("Feedback updated")
+        const rate = await rating(data)
+        if (rate?.response === 200) {
+            setdata((prev) => [...prev, data])
+            setadd("")
+            setstar(0)
+            alert("Feedback updated")
+        }
     }
-    console.log(data)
+    console.log("data", data)
     return (
         <div className=''>
 

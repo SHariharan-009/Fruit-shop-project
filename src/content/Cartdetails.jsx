@@ -4,13 +4,13 @@ import { FaMinus } from "react-icons/fa";
 import { myContext } from '../Context/Context';
 import { useState } from 'react';
 import { trend } from '../data/trend';
+import { MdDelete } from "react-icons/md";
 
 const cartdetails = () => {
 
     const { items, setitems } = useContext(myContext)
     console.log(items, "items")
     const [countData, setCountData] = useState(1)
-
 
     // const handleAdd = (id) => {
 
@@ -35,38 +35,43 @@ const cartdetails = () => {
     //     setitems(newData)
     // }
 
-    const handleAdd = (id) => {
+    const handleAdd = (header) => {
+
         const newData = items.map((item) => {
-            if (item.id === id) {
+            if (item.header === header) {
 
                 const newCount = (item.count || 1) + 1;
-                if (newCount > 10) {
-                    alert("FRUIT LIMIT 10KG ONLY")
+
+                if (newCount > item.quantity) {
+
+                    alert("Maximum 10 ONLY")
                 }
                 return {
                     ...item,
                     count: newCount
-                    // label: newCount * Number(item.label),  // Use a separate `labelPerKg` field
                 };
             }
             return item;
         });
         setitems(newData);
-
     };
 
-    const handleMinus = (id) => {
+    const handleMinus = (header) => {
+
         const newData = items.map((item) => {
-            if (item.id === id && item.count > 1) {
-                const newCount = item.count - 1;
+
+            if (item.header === header) {
+
+                const newCount = (item.count) - 1;
+
+                if (newCount < item.minquantity) {
+                    alert("minimum 1")
+                }
+
                 return {
                     ...item,
                     count: newCount
-                    // label: newCount * Number(item.label),
                 };
-            }
-            else {
-                alert("Order accepts minimum 1kg only")
             }
             return item;
         });
@@ -79,13 +84,11 @@ const cartdetails = () => {
 
     const finalAmount = totalAmount >= 1000 ? totalAmount - discount : totalAmount;
 
-    const delfunc = (data) => {
+    const delfunc = (header) => {
 
-        const del = items.filter((item) => (item.id !== data.id))
+        const del = items.filter((item) => (item.header !== header))
 
         setitems(del)
-
-        // setitems(items)
 
         alert("selected cart item deleted successfully")
 
@@ -95,12 +98,12 @@ const cartdetails = () => {
         <div>
             <div >
                 <table className='w-full border-collapse mt-10 '>
-                    <thead className='bg-gray-200 text-left text-xl font-bold border-b-2'>
+                    <thead className='bg-gray-200 text-left text-xl font-bold border-b-2 content-center'>
                         <tr className=''>
                             <td className='p-4'>Product name</td>
                             <td className='p-4'>Product image</td>
                             <td className='p-4'>Price</td>
-                            <td className='p-4'>kg</td>
+                            <td className='p-4'>kg/Parcel/Pocket</td>
                             <td className='p-4'>Tot rate</td>
                             <td className='p-4'>delete item</td>
                         </tr>
@@ -115,16 +118,16 @@ const cartdetails = () => {
 
                             <td className='p-4'>
 
-                                <button onClick={() => handleMinus(data.id)} className='border w-[30px] h-[30px] rounded-full flex items-center justify-center hover:bg-blue-400'><FaMinus /></button>
+                                <button onClick={() => handleMinus(data.header)} className='border w-[30px] h-[30px] rounded-full flex items-center justify-center hover:bg-blue-400'><FaMinus /></button>
 
                                 <p>{data.count}</p>
 
-                                <button onClick={() => handleAdd(data.id)} className='border w-[30px] h-[30px] rounded-full flex items-center justify-center hover:bg-blue-400'><IoMdAdd /></button>
+                                <button onClick={() => handleAdd(data.header)} className='border w-[30px] h-[30px] rounded-full flex items-center justify-center hover:bg-blue-400'><IoMdAdd /></button>
 
                             </td>
                             <td className='pl-5'><label >{data.label * data.count}</label></td>
 
-                            <td><button className='cursor-pointer hover:text-red-700' onClick={() => delfunc(data.id)}>Del</button></td>
+                            <td><button onClick={() => delfunc(data.header)}><MdDelete className='cursor-pointer hover:text-red-700 flex items-center justify-center ' /></button></td>
                         </tr>
                     ))}
                 </table>
@@ -154,5 +157,6 @@ const cartdetails = () => {
         </div >
     )
 }
+
 
 export default cartdetails

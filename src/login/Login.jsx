@@ -3,21 +3,20 @@ import "./Login.css"
 import { useState } from 'react'
 import { Link, useNavigate } from "react-router-dom"
 import { login } from "../api/api"
-import { FaEye, FaEyeSlash, FaRegUserCircle, FaGoogle, FaGithub, FaLinkedin } from "react-icons/fa";
-import bg1 from "../assets/img/bg1.jpeg"
+import { FaEye, FaEyeSlash, FaRegUserCircle, FaGoogle } from "react-icons/fa";
 
 const Login = () => {
+    const navigate = useNavigate()
+
     const [email, setemail] = useState("@gmail.com")
     const [password, setpassword] = useState("")
 
     const [erroremail, seterroremail] = useState("")
     const [errorpassword, seterrorpassword] = useState("")
-    const navigate = useNavigate()
 
     const [iconvissible, seticonvissible] = useState(false)
 
     const submitfunc = async (e) => {
-        console.log("login successfully", email, password)
 
         if (!email) {
             seterroremail("*** email/username required  ***");
@@ -30,16 +29,18 @@ const Login = () => {
             email: email,
             password: password
         }
-
         const response = await login(data);
-        if (response?.response_code == 200) { }
-        console.log("updates successful", response);
+
+        if (response?.responce == 200) { }
+
         localStorage.setItem("token", response.token)
         navigate("/dashboard");
+
         setemail("");
         setpassword("")
-    }
 
+        alert("login successfully")
+    }
 
     const vissblefunc = () => {
         seticonvissible(prev => !prev)
@@ -47,7 +48,7 @@ const Login = () => {
 
     return (
 
-        <div className={`w-full h-[500px] bg-fixed bg-[url('${bg1}')] bg-fixed`}
+        <div className={`w-full h-[500px] bg-fixed`}
         >
             <div className='w-[450px] bg-blue-200 rounded-2xl shadow-lg p-6 mt-10 mx-auto relative' style={{ padding: "20px" }}>
 
@@ -104,9 +105,21 @@ const Login = () => {
                     <div className="flex justify-center mt-4 w-full h-[50px] items-center" >
                         <FaGoogle className="text-3xl text-white bg-blue-600 p-2 rounded-full cursor-pointer hover:bg-blue-800 transition" />
                     </div>
-                    <label >Are you a vendor? Login</label>
-                    <label > Are you a City Manager? Login</label>
-                </div>
+                    <div className="flex justify-center gap-5">
+                        <p>
+                            Are you a vendor?{" "}
+                            <Link to="/vendor-login" className="text-blue-600 hover:underline">
+                                Login
+                            </Link>
+                        </p>
+                        <p>
+                            Are you a City Manager?{" "}
+                            <Link to="/citymanager-login" className="text-blue-600 hover:underline">
+                                Login
+                            </Link>
+                        </p>
+                    </div>
+                </div >
             </div >
         </div >
     )

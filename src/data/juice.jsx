@@ -15,7 +15,11 @@ export const juice = [
         label: "30",
         header: "mix fruit juice",
         buttonName: "Buy now",
-        addcart: "Add to card"
+        addcart: "Add to card",
+        quantity: "10",
+        minquantity: "1",
+        count: 1
+
     },
     {
         id: 2,
@@ -23,7 +27,13 @@ export const juice = [
         label: "50",
         header: "grap juice",
         buttonName: "Buy now",
-        addcart: "Add to card"
+        addcart: "Add to card",
+        quantity: "3",
+        minquantity: "1",
+        count: 1,
+        quantity: "10",
+        minquantity: "1",
+        count: 1
     },
     {
         id: 3,
@@ -31,7 +41,11 @@ export const juice = [
         label: "60",
         header: "apple juice ",
         buttonName: "Buy now",
-        addcart: "Add to card"
+        addcart: "Add to card",
+        quantity: "10",
+        minquantity: "1",
+        count: 1
+
     },
     {
         id: 4,
@@ -39,7 +53,10 @@ export const juice = [
         label: "60",
         header: "pomegrsnt juice",
         buttonName: "Buy now",
-        addcart: "Add to card"
+        addcart: "Add to card",
+        quantity: "10",
+        minquantity: "1",
+        count: 1
     }
 ]
 
@@ -50,7 +67,10 @@ export const juice1 = [
         label: "30",
         header: "mix fruit juice",
         buttonName: "Buy now",
-        addcart: "Add to card"
+        addcart: "Add to card",
+        quantity: "10",
+        minquantity: "1",
+        count: 1
     },
     {
         id: 2,
@@ -58,7 +78,10 @@ export const juice1 = [
         label: "50",
         header: "grap juice",
         buttonName: "Buy now",
-        addcart: "Add to card"
+        addcart: "Add to card",
+        quantity: "10",
+        minquantity: "1",
+        count: 1
     },
     {
         id: 3,
@@ -66,7 +89,10 @@ export const juice1 = [
         label: "60",
         header: "apple juice ",
         buttonName: "Buy now",
-        addcart: "Add to card"
+        addcart: "Add to card",
+        quantity: "10",
+        minquantity: "1",
+        count: 1
     },
     {
         id: 4,
@@ -74,6 +100,9 @@ export const juice1 = [
         label: "60",
         header: "pomegrsnt juice",
         buttonName: "Buy now",
-        addcart: "Add to card"
+        addcart: "Add to card",
+        quantity: "10",
+        minquantity: "1",
+        count: 1
     }
 ]

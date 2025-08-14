@@ -73,13 +73,13 @@ const Content = () => {
       <div className='relative w-full h-[450px] sm:w-screen'
       >
 
-        <h2 className='z-100 absolute text-2xl font-bold text-center text-balance content-center text-neutral-950 animate-pulse md:text-4xl' >{imageArray[direction]?.text}</h2>
+        <h2 className='absolute text-2xl font-bold text-center text-balance content-center text-neutral-950 animate-pulse md:text-4xl' >{imageArray[direction]?.text}</h2>
 
-        <img src={imageArray[direction]?.img} alt={`Juice`} className='w-screen h-full object-cover rounded-xl md:w-full ' />
+        <img src={imageArray[direction]?.img} alt={`Juice`} className='w-full h-full object-cover rounded-xl md:w-full overflow-hidden' />
 
         <button className='z-100  text-3xl text-gray-700 hover:text-black cursor-pointer' onClick={lftclkfunc}><FaChevronCircleLeft /></button>
 
-        <button className='z-100 ml-[1300px] right-[5px]  absolute text-3xl text-gray-700 hover:text-black cursor-pointer' onClick={rgtclkfunc}><FaChevronCircleRight /></button>
+        <button className='z-100 ml-[1300px] right-[15px]  absolute text-3xl text-gray-700 hover:text-black cursor-pointer' onClick={rgtclkfunc}><FaChevronCircleRight /></button>
 
         <div >
 

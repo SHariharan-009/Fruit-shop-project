@@ -1,9 +1,64 @@
 import React, { useState } from 'react'
 import { juice, juice1 } from '../data/juice'
-// import { useContext } from 'react'
-// import { myContext } from '../Context/Context'
+import { useContext } from 'react'
+import { myContext } from '../Context/Context'
 
 const Overalljuice = () => {
+
+    const { items, setitems } = useContext(myContext)
+
+    const oljuicefunc = (header) => {
+
+        const frt = juice.find((data) => (data.header === header
+        ))
+
+        if (!frt) {
+
+            alert("Stock not available")
+            return;
+        }
+
+        const cartfrt = items.some((item) => (item.header === header))
+
+        if (cartfrt) {
+
+            alert("Selected item already add to cart")
+            return;
+        }
+        else {
+            setitems((prev) => [...prev, frt])
+
+            alert("Selected item add to cart")
+            return;
+        }
+    }
+
+    const oljuicefunc1 = (header) => {
+
+        const frt = juice1.find((data) => (data.header === header
+        ))
+
+        if (!frt) {
+
+            alert("Stock not available")
+            return;
+        }
+
+        const cartfrt = items.some((item) => (item.header === header))
+
+        if (cartfrt) {
+
+            alert("Selected item already add to cart")
+            return;
+        }
+        else {
+            setitems((prev) => [...prev, frt])
+
+            alert("Selected item add to cart")
+            return;
+        }
+    }
+
     return (
         <div className='flex flex-wrap gap-6 bg-white p-4'>
             < div className='flex justify-around gap-30'>
@@ -18,7 +73,7 @@ const Overalljuice = () => {
 
                             <div className='mt-3'>
 
-                                <span className='ml-[10px]'><button className="bg-white border border-blue-500 text-blue-500 rounded-2xl px-4 py-1 hover:bg-blue-50">{data.addcart}</button></span>
+                                <span className='ml-[10px]'><button className="bg-white border border-blue-500 text-blue-500 rounded-2xl px-4 py-1 hover:bg-blue-50" onClick={() => oljuicefunc(data.header)}>{data.addcart}</button></span>
                             </div>
                         </div>
                     ))
@@ -32,7 +87,7 @@ const Overalljuice = () => {
                             <label className='block text-sm font-bold mt-2'>1 KG Rs :{data.label}</label>
                             <h2 className="text-lg font-semibold mt-1">{data.header}</h2>
                             <div className='mt-[10px]'>
-                                <button className="bg-white border border-blue-600 text-blue-600 rounded-2xl px-4 py-1 hover:bg-blue-50" >{data.addcart}</button>
+                                <button className="bg-white border border-blue-600 text-blue-600 rounded-2xl px-4 py-1 hover:bg-blue-50" onClick={() => oljuicefunc1(data.header)} >{data.addcart}</button>
                             </div>
                         </div>
                     ))

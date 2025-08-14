@@ -16,6 +16,7 @@ import Socialmedia from './content/Socialmedia'
 import Overallfruits from './content/Overallfruits'
 import Overallsnacks from './content/Overallsnacks'
 import Overalljuice from './content/Overalljuice'
+import Error from './content/Error'
 
 function App() {
   return (
@@ -24,10 +25,9 @@ function App() {
       <Socialmedia />
       <Routes>
         <Route path="/" element={<Content />} />
-        <Route path="/Login" element={<Login />} />
+        <Route path="/Login/:username" element={<Login />} />
         <Route path="/Signup" element={<Signup />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        {/* <Route path="/Detailbar" element={<Detailbar />} /> */}
         <Route path="/Order" element={<Order />} />
         <Route path="/Juice" element={<Juice />} />
         <Route path="/Fruits" element={<Fruits />} />
@@ -36,8 +36,8 @@ function App() {
         <Route path="/Overallfruits" element={<Overallfruits />} />
         <Route path="/Overalljuice" element={<Overalljuice />} />
         <Route path="/Overallsnacks" element={<Overallsnacks />} />
+        <Route path="*" element={<Error />} />
       </Routes>
-
     </Fragment>
   )
 }

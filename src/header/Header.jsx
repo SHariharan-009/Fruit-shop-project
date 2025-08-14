@@ -5,6 +5,8 @@ import { BsToggle2On, BsToggle2Off } from "react-icons/bs";
 import { myContext } from '../Context/Context'
 import { FaShoppingCart } from "react-icons/fa";
 import { FiAlignJustify } from "react-icons/fi";
+import { FaHeart } from "react-icons/fa";
+import { CgFileDocument } from "react-icons/cg";
 
 const Header = () => {
 
@@ -26,6 +28,8 @@ const Header = () => {
 
     }
   }
+
+  const { items } = useContext(myContext)
 
   return (
     <div className=''>
@@ -57,10 +61,12 @@ const Header = () => {
             <FaSearch className='absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500 w-3 h-3 md:w-4 md:h-4' />
 
           </div>
-          <div className='flex-row'>
-            <Link to="/Cartdetails"><FaShoppingCart className='w-[12px] h-[12px] md:w-[24px] md:h-[24px] text-black hover:text-green-600 relative ' /></Link>
+          <div className='relative '>
 
-            <label className='bg-red-500 w-[20px] h-[20px] rounded-full text-white text-[5px] translate translate-y-1/2 absolute content-center'>2</label>
+            <Link to="/Cartdetails"><FaShoppingCart className='w-3 h-3 md:w-6 md:h-6 text-black hover:text-green-600 ' /></Link>
+
+            <span className='bg-red-500 w-5 h-5 rounded-full text-white text-[10px] flex items-center justify-center absolute -top-2 -right-2'>{items.length}</span>
+
           </div>
         </div>
 
@@ -70,12 +76,15 @@ const Header = () => {
 
           <div className='flex flex-col p-4 gap-4 bg-white text-black 
   w-full sm:w-[250px] h-screen sm:h-[500px] 
-  absolute left-0 top-[60px] z-[100] border-2 rounded-2xl sm:rounded-2xl 
+  absolute left-0 z-[100] border  
   shadow-lg'>
 
-            <Link to="/Login" className='flex items-center gap-2 hover:bg-gray-200 p-2 rounded '><FaRegUser />User</Link>
+            <Link to="/Login" className='flex items-center gap-2 hover:bg-gray-200 p-2 rounded'><FaRegUser />User</Link>
 
-            <Link to="/Order" className='hover:bg-gray-200 p-2 rounded '>Order</Link>
+            <Link to="/Order" className='hover:bg-gray-200 p-2 rounded flex items-center gap-2'><CgFileDocument />Order</Link>
+
+            <Link to="/Order" className='hover:bg-gray-200 p-2 rounded flex items-center gap-2'><FaHeart />Favourit</Link>
+
 
             <Link className='flex items-center gap-2 hover:bg-gray-200 p-2 rounded ' to="" onClick={() => setclkcutn(prev => !prev)}> {clkcutn ? <BsToggle2On /> : <BsToggle2Off />} Dark mode</Link>
           </div>

@@ -17,7 +17,11 @@ export const img2 = [
         buttonName: "Buy now",
         addcart: "Add to card",
         // kg: kgvalue,
-        cls: "cd2img1"
+        cls: "cd2img1",
+        quantity: "10",
+        minquantity: "1",
+        count: 1
+
     },
 
     {
@@ -28,7 +32,11 @@ export const img2 = [
         buttonName: "Buy now",
         addcart: "Add to card",
         // kg: kgvalue,
-        cls: "cd2img2"
+        cls: "cd2img2",
+        quantity: "10",
+        minquantity: "1",
+        count: 1
+
     },
     {
         id: 3,
@@ -38,7 +46,11 @@ export const img2 = [
         buttonName: "Buy now",
         addcart: "Add to card",
         // kg: kgvalue,
-        cls: "cd2img3"
+        cls: "cd2img3",
+        quantity: "10",
+        minquantity: "1",
+        count: 1
+
     },
     {
         id: 1,
@@ -48,7 +60,11 @@ export const img2 = [
         buttonName: "Buy now",
         addcart: "Add to card",
         // kg: kgvalue,
-        cls: "cd2img4"
+        quantity: "10",
+        minquantity: "1",
+        cls: "cd2img4",
+        count: 1
+
     }
 ]
 
@@ -60,7 +76,11 @@ export const img2a = [
         header: "Banana ",
         buttonName: "Buy now",
         addcart: "Add to card",
-        cls: "cd2aimg1"
+        quantity: "10",
+        minquantity: "1",
+        cls: "cd2aimg1",
+        count: 1
+
     },
     {
         id: 2,
@@ -69,7 +89,11 @@ export const img2a = [
         header: "Watermelon  ",
         buttonName: "Buy now",
         addcart: "Add to card",
-        cls: "cd2aimg2"
+        quantity: "10",
+        minquantity: "1",
+        cls: "cd2aimg2",
+        count: 1
+
     },
     {
         id: 3,
@@ -78,7 +102,11 @@ export const img2a = [
         header: "Strawberry",
         buttonName: "Buy now",
         addcart: "Add to card",
-        cls: "cd2aimg3"
+        cls: "cd2aimg3",
+        quantity: "10",
+        minquantity: "1",
+        count: 1
+
     },
     {
         id: 1,
@@ -87,6 +115,10 @@ export const img2a = [
         header: "Pomegranate ",
         buttonName: "Buy now",
         addcart: "Add to card",
-        cls: "cd2aimg4"
+        quantity: "10",
+        minquantity: "1",
+        cls: "cd2aimg4",
+        count: 1
+
     }
 ]
