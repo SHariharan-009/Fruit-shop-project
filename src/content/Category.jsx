@@ -1,10 +1,22 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import icon1 from "../assets/img/juicicon.jpeg"
 import icon2 from "../assets/img/appicon.jpeg"
 import icon3 from "../assets/img/snackicon.png"
 import { Link } from 'react-router-dom';
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 const Category = () => {
+
+    useEffect(() => {
+        AOS.init({
+            duration: 1000, // Animation duration in ms
+            easing: "ease-in-out",
+            once: true,
+        })
+
+
+    }, [])
+
 
     return (
         <div className='content-center mt-[90px] p-[10px]'>
@@ -14,8 +26,8 @@ const Category = () => {
             <div className=' grid grid-cols-2 md:flex justify-around font-bold text-[16px] p-[20px] md:text-2xl md:p-[40px]'>
 
                 <Link to="/Overalljuice " >
-                    <div className="cursor-pointer text-center">
-                        <img src={icon1} alt="Juice icon" className='cursor-pointer w-[60px] h-[50px] md:w-[120px] md:h-[100px] hover:bg-gray-400' />
+                    <div data-aos="fade-right" className="cursor-pointer text-center">
+                        <img src={icon1} alt="Juice icon" className='cursor-pointer w-[60px] h-[50px] md:w-[120px] md:h-[100px] hover:bg-gray-400 hover:' />
                         <h2 className='text-center'>Juice</h2>
                     </div>
                 </Link>
@@ -28,7 +40,7 @@ const Category = () => {
                 </Link>
 
                 <Link to="/Overallsnacks" >
-                    <div className="cursor-pointer text-center">
+                    <div data-aos="fade-left" className="cursor-pointer text-center">
                         <img src={icon3} alt="Juice icon" className='cursor-pointer w-[60px] h-[50px] md:w-[120px] md:h-[100px]' />
                         <h2 className='text-center'> Snacks</h2>
                     </div>

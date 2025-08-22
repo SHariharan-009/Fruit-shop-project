@@ -34,15 +34,15 @@ const Header = () => {
   return (
     <div className=''>
 
-      <div className='fiwed w-full h-[50px] flex items-center justify-around px-5 bg-white shadow-md  text-black font-bold' style={{ padding: "0 20px" }} >
+      <div className='fiwed w-full h-[50px] flex items-center justify-around px-5 bg-white shadow-md  text-black font-bold' >
 
-        < Link to="" className='hover:bg-gray-200 p-2 rounded-md ' onClick={clkfunc}><FiAlignJustify className="w-[20px] h-[20px] md:w-[30px] md:h-[30px]" /> </Link>
+        < Link to="" className='hover:bg-gray-200 p-2 rounded-md active:rotate-90' onClick={clkfunc}><FiAlignJustify className="w-[20px] h-[20px] md:w-[30px] md:h-[30px]" /> </Link>
 
         <label className=' text-[10px] md:text-[20px] font-bold text-neutral-800 tracking-wide'>Shop name</label>
 
         <div className=" flex justify-around items-center gap-5 ">
 
-          <Link to="/" className=' text-[10px] md:text-[20px] h-[30px] rounded-2xl  hover:underline '> Home </Link>
+          <Link to="/" className=' text-[10px] md:text-[20px] h-[30px] rounded-2xl  hover:underline active:translate-x-3'> Home </Link>
 
           <select className='h-[15px] md:h-[30px] rounded-2xl text-[7px] md:text-[16px] border-2'
             onChange={(e) => handleChange(e.target.value)} required>
@@ -63,7 +63,7 @@ const Header = () => {
           </div>
           <div className='relative '>
 
-            <Link to="/Cartdetails"><FaShoppingCart className='w-3 h-3 md:w-6 md:h-6 text-black hover:text-green-600 ' /></Link>
+            <Link to="/Cartdetails"><FaShoppingCart className='w-3 h-3 md:w-6 md:h-6 text-black hover:text-green-600 hover:scale-125' /></Link>
 
             <span className='bg-red-500 w-5 h-5 rounded-full text-white text-[10px] flex items-center justify-center absolute -top-2 -right-2'>{items.length}</span>
 

@@ -59,8 +59,6 @@ const MyContextProvider = ({ children }) => {
             cls: "cd2img4"
         }
     ])
-
-
     const data = {
         name: "hari",
         age: "27"

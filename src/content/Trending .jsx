@@ -76,7 +76,7 @@ const Trending = () => {
                                     alt="heart" className='ml-[155px] w-[10px] h-[10px] md:w-[20px] md:h-[20px] cursor-pointer'
                                 />
 
-                                <img src={data.img} alt="image" className='ml-[25px] content-around w-[60px] h-[50px] md:w-[120px] md:h-[100px]' />
+                                <img src={data.img} alt="image" className='ml-[25px] content-around w-[60px] h-[50px] md:w-[120px] md:h-[100px] hover:transition duration-100 ease-in-out hover:scale-110' />
 
                                 <label className='ml-[50px] mt-[10px] text-[8px] md:text-[16px]'>1 KG Rs :{data.label}</label>
 
