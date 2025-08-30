@@ -10,7 +10,6 @@ import { Routes, Route } from "react-router-dom"
 import './App.css'
 import Signup from './Signup/Signup'
 import Dashboard from './dashboard/dashboard'
-import Detailbar from './header/Detailbar.JSX'
 import Cartdetails from './content/cartdetails'
 import Socialmedia from './content/Socialmedia'
 import Overallfruits from './content/Overallfruits'
