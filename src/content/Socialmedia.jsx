@@ -1,5 +1,5 @@
 import React from 'react'
-import whatsapp from "../assets/img/Whtapp.jpeg"
+import whatsapp from "../assets/img/whatsapp.jpeg"
 import fb from "../assets/img/fb.png"
 import insta from "../assets/img/insta.jpeg"
 
