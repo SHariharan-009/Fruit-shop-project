@@ -1,12 +1,14 @@
 import React, { useContext } from 'react'
 import "./Footer.css"
 import { FaWhatsapp, FaFacebook, FaInstagram } from "react-icons/fa6";
+import Qrcode from '../content/Qrcode';
 
 const Footer = () => {
 
 
   return (
-    <div className='mt-10 mb-2 bg-gradient-to-br from-amber-300 to-emerald-300 w-full h-full flex justify-around rounded-xl'>
+
+    <div className='mt-10 mb-2 bg-gradient-to-br from-amber-300 to-emerald-300 w-full h-full flex justify-around rounded-xl text-center'>
 
       <div className='p-0 md:p-10'>
 
@@ -29,6 +31,9 @@ const Footer = () => {
         <div className="">
           <label>Contact us </label>
         </div>
+      </div>
+      <div className='mr-20 mb-0'>
+        <Qrcode />
       </div>
     </div >
   )
