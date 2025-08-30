@@ -3,7 +3,6 @@ import { IoMdAdd } from "react-icons/io";
 import { FaMinus } from "react-icons/fa";
 import { myContext } from '../Context/Context';
 import { useState } from 'react';
-import { trend } from '../data/trend';
 import { MdDelete } from "react-icons/md";
 
 const cartdetails = () => {

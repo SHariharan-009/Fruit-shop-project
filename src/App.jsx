@@ -10,7 +10,7 @@ import { Routes, Route } from "react-router-dom"
 import './App.css'
 import Signup from './Signup/Signup'
 import Dashboard from './dashboard/Dashboard'
-import Cartdetails from './content/cartdetails'
+import Cartdetails from './content/Cartdetails'
 import Socialmedia from './content/Socialmedia'
 import Overallfruits from './content/Overallfruits'
 import Overallsnacks from './content/Overallsnacks'
