@@ -9,15 +9,13 @@ import Order from './header/Order'
 import { Routes, Route } from "react-router-dom"
 import './App.css'
 import Signup from './Signup/Signup'
-import Dashboard from './dashboard/dashboard'
+import Dashboard from './dashboard/Dashboard'
 import Cartdetails from './content/cartdetails'
 import Socialmedia from './content/Socialmedia'
 import Overallfruits from './content/Overallfruits'
 import Overallsnacks from './content/Overallsnacks'
 import Overalljuice from './content/Overalljuice'
 import Error from './content/Error'
-import Qrcode from './content/Qrcode'
-
 
 function App() {
   return (
@@ -37,7 +35,6 @@ function App() {
         <Route path="/Overallfruits" element={<Overallfruits />} />
         <Route path="/Overalljuice" element={<Overalljuice />} />
         <Route path="/Overallsnacks" element={<Overallsnacks />} />
-        {/* <Route path="/Overallfruits" element={<Qrcode />} /> */}
         <Route path="*" element={<Error />} />
       </Routes>
     </Fragment>
