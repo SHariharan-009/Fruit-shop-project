@@ -11,12 +11,12 @@ const Arrived = () => {
                 <label className='font-bold text-[16px] md:text-[32px] p-[10px]'>Newly Arrived items</label>
             </div>
 
-            <div className='md:flex grid grid-cols-2 justify-around mt-[20px] cursor-pointer p-[0px] md:p-[40px] text-center'  >
+            <div className='md:flex justify-around mt-[20px] cursor-pointer p-[0px] md:p-[40px] text-center ml-10 md:ml-0'  >
 
-                <div className='w-[140px] h-[100px] md:w-[280px] md:h-[200px]' >
-                    <img className='w-[60px] h-[50px] md:w-[120px] md:h-[100px] animate-pulse' style={{ marginLeft: "35%" }} src={arrimg1} alt="New arrived 1st img" />
+                <div className='w-[280px] h-[200px]' >
+                    <img className='w-[60px] h-[50px] md:w-[120px] md:h-[100px] animate-pulse ml-[35%]' src={arrimg1} alt="New arrived 1st img" />
 
-                    <div className='hover:bg-gray-300 text-center'>
+                    <div className='hover:bg-gray-300 text-center ml-10 md:ml-10'>
 
                         <label className='text-[16px] md:text-xl'>Dragon fruit</label><br />
                         <ol>
@@ -26,7 +26,7 @@ const Arrived = () => {
                     </div>
                 </div>
 
-                <div className='w-[280px] h-[200px]'>
+                <div className='w-[280px] h-[200px] '>
 
                     <img className='w-[60px] h-[50px] md:w-[120px] md:h-[100px] animate-pulseease-in-out ml-[32%]' src={arrimg2} alt="New arrived 2nd img" />
                     <div className='hover:bg-gray-300 text-center'>

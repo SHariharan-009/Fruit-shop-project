@@ -23,7 +23,7 @@ const Category = () => {
 
             <label className='text-[16px] mt-160 font-bold md:text-[32px]'>Category</label>
 
-            <div className=' grid grid-cols-2 md:flex justify-around font-bold text-[16px] p-[20px] md:text-2xl md:p-[40px] text-center'>
+            <div className=' md:flex justify-around font-bold text-[16px] p-[20px] md:text-2xl md:p-[40px] text-center ml-[20%] md:ml-0'>
 
                 <Link to="/Overalljuice " >
                     <div data-aos="fade-right" className="cursor-pointer text-center">

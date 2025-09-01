@@ -82,7 +82,7 @@ const Content = () => {
 
         <div >
 
-          <div className='absolute inset-0 flex justify-around items-center px-1 mt-190 md:mt-110 md:px-10 gap-2 md:gap-1 md:mr-1 mr-0 text-center' >
+          <div className='absolute inset-0 flex justify-around items-center px-1 mt-190 md:mt-110 md:px-10 gap-2 md:gap-1 md:mr-1 mr-0 text-center md:py-0 py-2' >
             {
               json.map((data) => (
 
@@ -92,7 +92,7 @@ const Content = () => {
 
                   <h2 className='font-medium text-[10px] text-center pt-2 md:text-[20px] md:pt-2'>{data.header}</h2>
 
-                  <button className='items-center ml-0 md:ml-[150px] w-[70px] h-[70px] md:w-[120px] md:h-[50px] font-normal md:font-bold bg-emerald-300 hover:bg-emerald-400 rounded-full md:rounded-2xl animate-pulse text-center p-2 md:p-0 text-[10px] md:text-[15px]' onClick={() => handleNavigate(data?.id)}>{data.buttonName}</button>
+                  <button className='items-center ml-0 md:ml-[150px] w-[70px] h-[70px] md:w-[120px] md:h-[60px] font-normal md:font-bold bg-emerald-300 hover:bg-emerald-400 rounded-full md:rounded-2xl animate-pulse text-center p-2 md:p-0 text-[10px] md:text-[15px] ' onClick={() => handleNavigate(data?.id)}>{data.buttonName}</button>
 
                 </div>
               ))
