@@ -23,7 +23,7 @@ const Category = () => {
 
             <label className='text-[16px] mt-160 font-bold md:text-[32px]'>Category</label>
 
-            <div className=' grid grid-cols-2 md:flex justify-around font-bold text-[16px] p-[20px] md:text-2xl md:p-[40px]'>
+            <div className=' grid grid-cols-2 md:flex justify-around font-bold text-[16px] p-[20px] md:text-2xl md:p-[40px] text-center'>
 
                 <Link to="/Overalljuice " >
                     <div data-aos="fade-right" className="cursor-pointer text-center">
@@ -41,7 +41,7 @@ const Category = () => {
 
                 <Link to="/Overallsnacks" >
                     <div data-aos="fade-left" className="cursor-pointer text-center">
-                        <img src={icon3} alt="Juice icon" className='cursor-pointer w-[60px] h-[50px] md:w-[120px] md:h-[100px]' />
+                        <img src={icon3} alt="Juice icon" className='cursor-pointer w-[60px] h-[50px] md:w-[120px] md:h-[100px] mt-5 md:mt-0 flex' />
                         <h2 className='text-center'> Snacks</h2>
                     </div>
                 </Link>

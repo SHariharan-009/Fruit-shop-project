@@ -41,7 +41,7 @@ const Enquery = () => {
     }
 
     return (
-        <div className='h-130 bg-linear-to-r from-yellow-200 to-blue-400 md:flex-row flex justify-center'>
+        <div className='h-130 bg-linear-to-r from-yellow-200 to-blue-400 md:flex-row md:flex justify-center'>
 
             <div className='animate-pulse text-center content-center'>
 

@@ -70,31 +70,29 @@ const Content = () => {
   return (
     <div className='font-poppins overflow-hidden'>
 
-      <div className='relative w-full h-[450px] sm:w-screen'
+      <div className='relative w-full h-[750px] md:h-[450px] md:w-screen'
       >
         <h2 className='absolute text-2xl font-bold text-center text-balance content-center text-neutral-950 animate-pulse md:text-4xl' >{imageArray[direction]?.text}</h2>
 
         <img src={imageArray[direction]?.img} alt={`Juice`} className='w-full h-full object-cover rounded-xl md:w-full overflow-hidden ' />
 
-        <button className='z-100  text-3xl text-gray-700 hover:text-black cursor-pointer active:translate-x-3' onClick={lftclkfunc}><FaChevronCircleLeft /></button>
+        <button className='z-100  text-gray-700 hover:text-black cursor-pointer active:translate-x-3 mt-10 md:mt-0 text-2xl md:text-3xl' onClick={lftclkfunc}><FaChevronCircleLeft /></button>
 
-        <button className='z-100 ml-[1300px] right-[15px]  absolute text-3xl text-gray-700 hover:text-black cursor-pointer active:translate-x-3' onClick={rgtclkfunc}><FaChevronCircleRight /></button>
+        <button className='z-100 ml-[270px] md:ml-[1300px] right-[15px] absolute text-2xl md:text-3xl text-gray-700 hover:text-black cursor-pointer active:translate-x-3 mt-10 md:mt-0 mr-0' onClick={rgtclkfunc}><FaChevronCircleRight /></button>
 
         <div >
 
-          <div className='absolute inset-0 flex justify-around items-center px-5 mt-110 md:px-10' >
+          <div className='absolute inset-0 flex justify-around items-center px-1 mt-190 md:mt-110 md:px-10 gap-2 md:gap-1 md:mr-1 mr-0 text-center' >
             {
               json.map((data) => (
 
-                <div key={data.id} className={`items-center w-[100px] h-[80px] bg-gradient-to-br from-green-100 to-lime-400 bg-opacity-1 hover:bg-gray-300 p-4 rounded-xl shadow-lg transition duration-300 border md:w-[300px] md:h-[180px]`} >
+                <div key={data.id} className={`items-center w-[100px] h-[80px] bg-gradient-to-br from-green-100 to-lime-400 bg-opacity-1 hover:bg-gray-300 p-1 md:p-4 rounded-xl shadow-lg transition duration-300 border md:w-[300px] md:h-[180px] mb-10 md:mb-0`} >
 
-                  <label className='font-bold text-[12px] text-center sm:text-3xl '>{data.label}</label>
+                  <label className='font-bold text-[12px] text-center md:text-3xl '>{data.label}</label>
 
                   <h2 className='font-medium text-[10px] text-center pt-2 md:text-[20px] md:pt-2'>{data.header}</h2>
 
-                  <button className='items-center ml-[150px] mt-0px w-[120px] h-[50px] font-bold bg-emerald-300 hover:bg-emerald-400 rounded-2xl animate-pulse' onClick={() => handleNavigate(data?.id)}>{data.buttonName}</button>
-
-                  {/* <img src={data.img} alt="Fruit juice image" className='w-[100px] h-[70px] opacity-[0.8]' /> */}
+                  <button className='items-center ml-0 md:ml-[150px] w-[70px] h-[70px] md:w-[120px] md:h-[50px] font-normal md:font-bold bg-emerald-300 hover:bg-emerald-400 rounded-full md:rounded-2xl animate-pulse text-center p-2 md:p-0 text-[10px] md:text-[15px]' onClick={() => handleNavigate(data?.id)}>{data.buttonName}</button>
 
                 </div>
               ))

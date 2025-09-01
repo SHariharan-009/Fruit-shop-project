@@ -32,7 +32,7 @@ const Rating = () => {
         <div className=''>
 
             <div >
-                <label className='text-[16px] md:text-[32px] mt-[30px] md:mt-[20px] font-bold items-center p-[10px]' >Review</label>
+                <label className='text-[16px] md:text-[32px] font-bold items-center p-[10px]' >Review</label>
                 <br />
 
                 <input value={add} onChange={(e) => setadd(e.target.value)} style={{ padding: "5px" }} className='w-[300px] h-[30px] rounded-2xl bg-blue-200' type="text" placeholder='Add feedback' required />

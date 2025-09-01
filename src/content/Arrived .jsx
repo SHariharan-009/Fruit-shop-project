@@ -10,7 +10,8 @@ const Arrived = () => {
             <div>
                 <label className='font-bold text-[16px] md:text-[32px] p-[10px]'>Newly Arrived items</label>
             </div>
-            <div className='md:flex grid grid-cols-2 justify-between mt-[20px] cursor-pointer p-[20px] md:p-[40px]'  >
+
+            <div className='md:flex grid grid-cols-2 justify-around mt-[20px] cursor-pointer p-[0px] md:p-[40px] text-center'  >
 
                 <div className='w-[140px] h-[100px] md:w-[280px] md:h-[200px]' >
                     <img className='w-[60px] h-[50px] md:w-[120px] md:h-[100px] animate-pulse' style={{ marginLeft: "35%" }} src={arrimg1} alt="New arrived 1st img" />
@@ -25,9 +26,9 @@ const Arrived = () => {
                     </div>
                 </div>
 
-                <div className='w-[280px] h-[200px] '>
+                <div className='w-[280px] h-[200px]'>
 
-                    <img className='w-[60px] h-[50px] md:w-[120px] md:h-[100px] animate-pulseease-in-out' style={{ marginLeft: "32%" }} src={arrimg2} alt="New arrived 2nd img" />
+                    <img className='w-[60px] h-[50px] md:w-[120px] md:h-[100px] animate-pulseease-in-out ml-[32%]' src={arrimg2} alt="New arrived 2nd img" />
                     <div className='hover:bg-gray-300 text-center'>
 
                         <label className="text-[16px] md:text-xl">Ice cream</label><br />
@@ -40,7 +41,7 @@ const Arrived = () => {
                 </div>
 
                 <div className="w-[280px] h-[200px] ">
-                    <img className='-[60px] h-[50px] md:w-[120px] md:h-[100px] animate-pulse ease-in-out' style={{ marginLeft: "30%" }} src={arrimg3} alt="New arrived 3rd img" />
+                    <img className='-[60px] h-[50px] md:w-[120px] md:h-[100px] animate-pulse ease-in-out ml-[30%]' src={arrimg3} alt="New arrived 3rd img" />
                     <div className='hover:bg-gray-300 text-center'>
 
                         <label className="text-[16px] md:text-xl">Dry fruits</label><br />
